@@ -1,0 +1,6 @@
+include README
+include INSTALL
+include tryton.cfg
+recursive-include view *.xml
+recursive-include locale *.po
+recursive-include tests *.py

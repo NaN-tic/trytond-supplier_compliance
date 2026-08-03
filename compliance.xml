@@ -1,0 +1,318 @@
+<?xml version="1.0"?>
+<!-- This file is part of the supplier_compliance module for Tryton.
+The COPYRIGHT file at the top level of this repository contains
+the full copyright notices and license terms. -->
+<tryton>
+    <data>
+        <record model="res.group" id="group_supplier_compliance">
+            <field name="name">Supplier Compliance</field>
+            <field name="parent" ref="purchase.group_purchase"/>
+        </record>
+        <record model="res.user-res.group" id="user_admin_group_supplier_compliance">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_supplier_compliance"/>
+        </record>
+
+        <record model="ir.ui.view" id="scope_type_view_tree">
+            <field name="model">supplier.compliance.scope.type</field>
+            <field name="type">tree</field>
+            <field name="name">scope_type_tree</field>
+        </record>
+        <record model="ir.ui.view" id="scope_type_view_form">
+            <field name="model">supplier.compliance.scope.type</field>
+            <field name="type">form</field>
+            <field name="name">scope_type_form</field>
+        </record>
+        <record model="ir.ui.view" id="requirement_type_view_tree">
+            <field name="model">supplier.compliance.requirement.type</field>
+            <field name="type">tree</field>
+            <field name="name">requirement_type_tree</field>
+        </record>
+        <record model="ir.ui.view" id="requirement_type_view_form">
+            <field name="model">supplier.compliance.requirement.type</field>
+            <field name="type">form</field>
+            <field name="name">requirement_type_form</field>
+        </record>
+        <record model="ir.ui.view" id="scheme_view_tree">
+            <field name="model">supplier.compliance.scheme</field>
+            <field name="type">tree</field>
+            <field name="name">scheme_tree</field>
+        </record>
+        <record model="ir.ui.view" id="scheme_view_form">
+            <field name="model">supplier.compliance.scheme</field>
+            <field name="type">form</field>
+            <field name="name">scheme_form</field>
+        </record>
+        <record model="ir.ui.view" id="record_view_tree">
+            <field name="model">supplier.compliance.record</field>
+            <field name="type">tree</field>
+            <field name="name">record_tree</field>
+        </record>
+        <record model="ir.ui.view" id="record_view_form">
+            <field name="model">supplier.compliance.record</field>
+            <field name="type">form</field>
+            <field name="name">record_form</field>
+        </record>
+        <record model="ir.ui.view" id="requirement_view_tree">
+            <field name="model">supplier.compliance.requirement</field>
+            <field name="type">tree</field>
+            <field name="name">requirement_tree</field>
+        </record>
+        <record model="ir.ui.view" id="requirement_view_form">
+            <field name="model">supplier.compliance.requirement</field>
+            <field name="type">form</field>
+            <field name="name">requirement_form</field>
+        </record>
+        <record model="ir.ui.view" id="certificate_view_tree">
+            <field name="model">supplier.compliance.certificate</field>
+            <field name="type">tree</field>
+            <field name="name">certificate_tree</field>
+        </record>
+        <record model="ir.ui.view" id="certificate_view_form">
+            <field name="model">supplier.compliance.certificate</field>
+            <field name="type">form</field>
+            <field name="name">certificate_form</field>
+        </record>
+
+        <record model="ir.action.act_window" id="act_record_form">
+            <field name="name">Compliance Records</field>
+            <field name="res_model">supplier.compliance.record</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_record_form_view_tree">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="record_view_tree"/>
+            <field name="act_window" ref="act_record_form"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_record_form_view_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="record_view_form"/>
+            <field name="act_window" ref="act_record_form"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_record_form_domain_active">
+            <field name="name">Active</field>
+            <field name="sequence" eval="10"/>
+            <field name="domain" eval="[('state', '=', 'active')]" pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="act_record_form"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_record_form_domain_needs_review">
+            <field name="name">Needs Review</field>
+            <field name="sequence" eval="20"/>
+            <field name="domain" eval="[('needs_review', '=', True)]" pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="act_record_form"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_record_form_domain_obsolete">
+            <field name="name">Obsolete</field>
+            <field name="sequence" eval="30"/>
+            <field name="domain" eval="[('state', '=', 'obsolete')]" pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="act_record_form"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_record_form_domain_all">
+            <field name="name">All</field>
+            <field name="sequence" eval="40"/>
+            <field name="domain" eval="[]" pyson="1"/>
+            <field name="act_window" ref="act_record_form"/>
+        </record>
+
+        <record model="ir.action.act_window" id="act_scope_type_form">
+            <field name="name">Scope Types</field>
+            <field name="res_model">supplier.compliance.scope.type</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_scope_type_form_view_tree">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="scope_type_view_tree"/>
+            <field name="act_window" ref="act_scope_type_form"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_scope_type_form_view_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="scope_type_view_form"/>
+            <field name="act_window" ref="act_scope_type_form"/>
+        </record>
+
+        <record model="ir.action.act_window" id="act_requirement_type_form">
+            <field name="name">Requirement Types</field>
+            <field name="res_model">supplier.compliance.requirement.type</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_requirement_type_form_view_tree">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="requirement_type_view_tree"/>
+            <field name="act_window" ref="act_requirement_type_form"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_requirement_type_form_view_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="requirement_type_view_form"/>
+            <field name="act_window" ref="act_requirement_type_form"/>
+        </record>
+
+        <record model="ir.action.act_window" id="act_scheme_form">
+            <field name="name">Certification Schemes</field>
+            <field name="res_model">supplier.compliance.scheme</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_scheme_form_view_tree">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="scheme_view_tree"/>
+            <field name="act_window" ref="act_scheme_form"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_scheme_form_view_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="scheme_view_form"/>
+            <field name="act_window" ref="act_scheme_form"/>
+        </record>
+
+        <menuitem parent="purchase.menu_purchase"
+            id="menu_supplier_compliance" sequence="60"
+            action="act_record_form"/>
+        <menuitem parent="purchase.menu_purchase"
+            id="menu_supplier_compliance_configuration" sequence="61"
+            name="Compliance Configuration"/>
+        <menuitem parent="menu_supplier_compliance_configuration"
+            id="menu_scope_type" sequence="10"
+            action="act_scope_type_form"/>
+        <menuitem parent="menu_supplier_compliance_configuration"
+            id="menu_requirement_type" sequence="20"
+            action="act_requirement_type_form"/>
+        <menuitem parent="menu_supplier_compliance_configuration"
+            id="menu_scheme" sequence="30"
+            action="act_scheme_form"/>
+
+        <record model="ir.ui.menu-res.group" id="menu_supplier_compliance_group">
+            <field name="menu" ref="menu_supplier_compliance"/>
+            <field name="group" ref="group_supplier_compliance"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="menu_supplier_compliance_configuration_group">
+            <field name="menu" ref="menu_supplier_compliance_configuration"/>
+            <field name="group" ref="group_supplier_compliance"/>
+        </record>
+
+        <record model="ir.model.access" id="access_scope_type">
+            <field name="model">supplier.compliance.scope.type</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_scope_type_group">
+            <field name="model">supplier.compliance.scope.type</field>
+            <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_requirement_type">
+            <field name="model">supplier.compliance.requirement.type</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_requirement_type_group">
+            <field name="model">supplier.compliance.requirement.type</field>
+            <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_scheme">
+            <field name="model">supplier.compliance.scheme</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_scheme_group">
+            <field name="model">supplier.compliance.scheme</field>
+            <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_record">
+            <field name="model">supplier.compliance.record</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_record_group">
+            <field name="model">supplier.compliance.record</field>
+            <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_requirement">
+            <field name="model">supplier.compliance.requirement</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_requirement_group">
+            <field name="model">supplier.compliance.requirement</field>
+            <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_certificate">
+            <field name="model">supplier.compliance.certificate</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_certificate_group">
+            <field name="model">supplier.compliance.certificate</field>
+            <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.rule.group" id="rule_group_record_company">
+            <field name="name">User in companies</field>
+            <field name="model">supplier.compliance.record</field>
+            <field name="global_p" eval="True"/>
+        </record>
+        <record model="ir.rule" id="rule_record_company">
+            <field name="domain"
+                eval="[('company', 'in', Eval('companies', []))]"
+                pyson="1"/>
+            <field name="rule_group" ref="rule_group_record_company"/>
+        </record>
+
+        <record model="ir.ui.view" id="party_view_form">
+            <field name="model">party.party</field>
+            <field name="inherit" ref="party.party_view_form"/>
+            <field name="name">party_form</field>
+        </record>
+        <record model="ir.ui.view" id="template_view_form">
+            <field name="model">product.template</field>
+            <field name="inherit" ref="product.template_view_form"/>
+            <field name="name">template_form</field>
+        </record>
+        <record model="ir.ui.view" id="product_supplier_view_form">
+            <field name="model">purchase.product_supplier</field>
+            <field name="inherit" ref="purchase.product_supplier_view_form"/>
+            <field name="name">product_supplier_form</field>
+        </record>
+        <record model="ir.ui.view" id="contact_mechanism_view_form">
+            <field name="model">party.contact_mechanism</field>
+            <field name="inherit" ref="party.contact_mechanism_view_form"/>
+            <field name="name">contact_mechanism_form</field>
+        </record>
+        <record model="ir.ui.view" id="contact_mechanism_view_tree_sequence">
+            <field name="model">party.contact_mechanism</field>
+            <field name="inherit" ref="party.contact_mechanism_view_tree_sequence"/>
+            <field name="name">contact_mechanism_tree_sequence</field>
+        </record>
+    </data>
+</tryton>

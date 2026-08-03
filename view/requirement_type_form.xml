@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<form col="4">
+    <label name="name"/>
+    <field name="name"/>
+    <label name="code"/>
+    <field name="code"/>
+    <label name="kind"/>
+    <field name="kind"/>
+    <label name="active"/>
+    <field name="active"/>
+    <label name="requires_document"/>
+    <field name="requires_document"/>
+    <label name="tracks_expiry"/>
+    <field name="tracks_expiry"/>
+    <separator string="Description" id="description" colspan="4"/>
+    <field name="description" colspan="4"/>
+</form>

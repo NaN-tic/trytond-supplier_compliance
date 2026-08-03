@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<data>
+    <xpath expr="/tree/field[@name='language']" position="before">
+        <field name="supplier_compliance_alert"/>
+        <field name="supplier_compliance_crisis"/>
+    </xpath>
+</data>

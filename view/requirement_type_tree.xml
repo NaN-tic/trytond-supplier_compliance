@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<tree>
+    <field name="name"/>
+    <field name="code"/>
+    <field name="kind"/>
+    <field name="requires_document"/>
+    <field name="tracks_expiry"/>
+    <field name="active"/>
+</tree>

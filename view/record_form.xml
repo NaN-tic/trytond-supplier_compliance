@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<form col="6">
+    <label name="company"/>
+    <field name="company"/>
+    <label name="state"/>
+    <field name="state"/>
+    <label name="party"/>
+    <field name="party"/>
+    <label name="scope_type"/>
+    <field name="scope_type"/>
+    <label name="product_template"/>
+    <field name="product_template"/>
+    <label name="product_supplier"/>
+    <field name="product_supplier"/>
+    <label name="code"/>
+    <field name="code"/>
+    <label name="name"/>
+    <field name="name"/>
+    <label name="external_article_name"/>
+    <field name="external_article_name" colspan="3"/>
+    <label name="active"/>
+    <field name="active"/>
+    <label name="start_date"/>
+    <field name="start_date"/>
+    <label name="end_date"/>
+    <field name="end_date"/>
+    <label name="expired"/>
+    <field name="expired"/>
+    <notebook colspan="6">
+        <page string="General" id="general">
+            <separator string="Notes" id="notes" colspan="6"/>
+            <field name="notes" colspan="6"/>
+        </page>
+        <page string="Contacts" id="contacts">
+            <field name="contact_mechanisms" colspan="6"
+                view_ids="party.contact_mechanism_view_tree_sequence,party.contact_mechanism_view_form"/>
+        </page>
+        <page string="Requirements" id="requirements">
+            <field name="requirements" colspan="6"
+                view_ids="supplier_compliance.requirement_view_tree,supplier_compliance.requirement_view_form"/>
+        </page>
+        <page string="Certificates" id="certificates">
+            <field name="certificates" colspan="6"
+                view_ids="supplier_compliance.certificate_view_tree,supplier_compliance.certificate_view_form"/>
+        </page>
+        <page string="Attachments" id="attachments">
+            <field name="attachments" colspan="6"/>
+        </page>
+    </notebook>
+</form>

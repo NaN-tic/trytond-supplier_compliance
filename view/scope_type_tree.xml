@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<tree>
+    <field name="name"/>
+    <field name="code"/>
+    <field name="product_required"/>
+    <field name="active"/>
+</tree>

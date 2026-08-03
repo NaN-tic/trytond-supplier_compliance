@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<form col="4">
+    <label name="requirement_type"/>
+    <field name="requirement_type"/>
+    <label name="status"/>
+    <field name="status"/>
+    <label name="document_date"/>
+    <field name="document_date"/>
+    <label name="expiry_date"/>
+    <field name="expiry_date"/>
+    <label name="expired"/>
+    <field name="expired"/>
+    <label name="value"/>
+    <field name="value"/>
+    <separator string="Notes" id="notes" colspan="4"/>
+    <field name="notes" colspan="4"/>
+    <separator string="Attachments" id="attachments" colspan="4"/>
+    <field name="attachments" colspan="4"/>
+</form>

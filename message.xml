@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!-- This file is part of the supplier_compliance module for Tryton.
+The COPYRIGHT file at the top level of this repository contains
+the full copyright notices and license terms. -->
+<tryton>
+    <data>
+        <record model="ir.message" id="msg_scope_requires_product">
+            <field name="text">The scope "%(scope)s" requires a product on compliance record "%(record)s".</field>
+        </record>
+        <record model="ir.message" id="msg_record_invalid_dates">
+            <field name="text">The end date must not be before the start date on compliance record "%(record)s".</field>
+        </record>
+        <record model="ir.message" id="msg_requirement_invalid_dates">
+            <field name="text">The requirement "%(requirement)s" has an expiry date earlier than its document date.</field>
+        </record>
+        <record model="ir.message" id="msg_certificate_invalid_dates">
+            <field name="text">The certificate "%(certificate)s" has an expiry date earlier than its issue date.</field>
+        </record>
+        <record model="ir.message" id="msg_product_supplier_mismatch">
+            <field name="text">The supplier product does not match the supplier and product selected on compliance record "%(record)s".</field>
+        </record>
+    </data>
+</tryton>
