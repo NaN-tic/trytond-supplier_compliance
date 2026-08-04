@@ -7,6 +7,7 @@ from trytond.i18n import gettext
 from trytond.model import DeactivableMixin, ModelSQL, ModelView, fields, \
     sequence_ordered
 from trytond.pool import Pool
+from trytond.pyson import Eval
 from trytond.transaction import Transaction
 
 
@@ -19,6 +20,9 @@ class PackagingFamily(DeactivableMixin, ModelSQL, ModelView):
         help='Empresa a la que pertenece la familia de envases. '
         'Ejemplo: "Valero Forn Tradicional, S. L.".')
     party = fields.Many2One('party.party', 'Supplier', required=True,
+        context={
+            'company': Eval('company', -1),
+            }, depends=['company'],
         ondelete='CASCADE',
         help='Proveedor al que se asocia la familia de envases. '
         'Ejemplo: "DISCERMA DEL VALLES S.L.".')
@@ -177,12 +181,17 @@ class PackagingCompliance(sequence_ordered(), ModelSQL, ModelView):
         return current_version.id if current_version else None
 
     def _get_current_version(self):
-        current_versions = [v for v in self.versions if v.current]
+        versions = list(self.versions or [])
+        current_versions = [v for v in versions if v.current]
         if current_versions:
             return current_versions[0]
-        if self.versions:
-            return self.versions[-1]
+        if versions:
+            return versions[-1]
         return None
+
+    @staticmethod
+    def default_versions():
+        return ()
 
     @fields.depends('expiry_date')
     def on_change_with_expired(self, name=None):
@@ -190,10 +199,16 @@ class PackagingCompliance(sequence_ordered(), ModelSQL, ModelView):
         today = Date.today()
         return bool(self.expiry_date and self.expiry_date < today)
 
-    @fields.depends('current_version')
+    @fields.depends('expiry_date', 'expiry_notice_days')
     def on_change_with_request_update(self, name=None):
-        current_version = self._get_current_version()
-        return bool(current_version and current_version.request_update)
+        Date = Pool().get('ir.date')
+        today = Date.today()
+        notice_days = self.expiry_notice_days or 0
+        if not self.expiry_date or not notice_days:
+            return False
+        if self.expiry_date < today:
+            return False
+        return self.expiry_date <= today + timedelta(days=notice_days)
 
     @classmethod
     def search_request_update(cls, name, clause):
@@ -318,7 +333,8 @@ class PackagingComplianceVersion(sequence_ordered(), ModelSQL, ModelView):
         today = Date.today()
         return bool(self.expiry_date and self.expiry_date < today)
 
-    @fields.depends('expiry_date', '_parent_compliance.expiry_notice_days')
+    @fields.depends('compliance', 'expiry_date',
+        '_parent_compliance.expiry_notice_days')
     def on_change_with_request_update(self, name=None):
         Date = Pool().get('ir.date')
         today = Date.today()
@@ -498,12 +514,17 @@ class PackagingMigrationTest(sequence_ordered(), ModelSQL, ModelView):
         return current_version.id if current_version else None
 
     def _get_current_version(self):
-        current_versions = [v for v in self.versions if v.current]
+        versions = list(self.versions or [])
+        current_versions = [v for v in versions if v.current]
         if current_versions:
             return current_versions[0]
-        if self.versions:
-            return self.versions[-1]
+        if versions:
+            return versions[-1]
         return None
+
+    @staticmethod
+    def default_versions():
+        return ()
 
     @fields.depends('next_review_date')
     def on_change_with_due(self, name=None):
@@ -511,10 +532,16 @@ class PackagingMigrationTest(sequence_ordered(), ModelSQL, ModelView):
         today = Date.today()
         return bool(self.next_review_date and self.next_review_date < today)
 
-    @fields.depends('current_version')
+    @fields.depends('next_review_date', 'review_notice_days')
     def on_change_with_request_update(self, name=None):
-        current_version = self._get_current_version()
-        return bool(current_version and current_version.request_update)
+        Date = Pool().get('ir.date')
+        today = Date.today()
+        notice_days = self.review_notice_days or 0
+        if not self.next_review_date or not notice_days:
+            return False
+        if self.next_review_date < today:
+            return False
+        return self.next_review_date <= today + timedelta(days=notice_days)
 
     @classmethod
     def search_request_update(cls, name, clause):
@@ -636,7 +663,7 @@ class PackagingMigrationTestVersion(sequence_ordered(), ModelSQL, ModelView):
         today = Date.today()
         return bool(self.next_review_date and self.next_review_date < today)
 
-    @fields.depends('next_review_date',
+    @fields.depends('migration_test', 'next_review_date',
         '_parent_migration_test.review_notice_days')
     def on_change_with_request_update(self, name=None):
         Date = Pool().get('ir.date')

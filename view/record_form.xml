@@ -111,33 +111,31 @@
         </page>
     </notebook>
 
-    <group col="4" colspan="12" id="footer">
-    <group col="3" colspan="2" id="state_actions">
-        <label name="state"/>
-        <field name="state" readonly="1"/>
-        <newline/>
-        <button name="set_state_draft" string="Draft"/>
-        <button name="set_state_pending_documents" string="Pending Documents"/>
-        <button name="set_state_approved" string="Approved"/>
-        <button name="set_state_conditional" string="Conditional"/>
-        <button name="set_state_suspended" string="Suspended"/>
-        <button name="set_state_expired" string="Expired"/>
-        <button name="set_state_withdrawn" string="Withdrawn"/>
-        <button name="set_state_rejected" string="Rejected"/>
-    </group>
-    <group/>
-
-    <group col="2"  id="purchase_links">
-        <button name="open_affected_open_purchases"
-            string="Affected Open Purchases"/>
-        <field name="affected_open_purchases"/>
-        <button name="open_draft_purchases" string="Draft Purchases"/>
-        <field name="draft_purchases"/>
-        <button name="open_pending_receipt_purchases"
-            string="Pending Receipt Purchases"/>
-        <field name="pending_receipt_purchases"/>
-        <button name="open_past_purchases" string="Past Purchases"/>
-        <field name="past_purchases"/>
-    </group>
+    <group col="2" colspan="12" id="footer">
+        <group col="3" colspan="1" id="state_actions">
+            <label name="state"/>
+            <field name="state" readonly="1"/>
+            <newline/>
+            <button name="set_state_draft" string="Draft"/>
+            <button name="set_state_pending_documents" string="Pending Documents"/>
+            <button name="set_state_approved" string="Approved"/>
+            <button name="set_state_conditional" string="Conditional"/>
+            <button name="set_state_suspended" string="Suspended"/>
+            <button name="set_state_expired" string="Expired"/>
+            <button name="set_state_withdrawn" string="Withdrawn"/>
+            <button name="set_state_rejected" string="Rejected"/>
+        </group>
+        <group col="2" colspan="1" id="purchase_links">
+            <button name="open_affected_open_purchases"
+                string="Affected Open Purchases"/>
+            <field name="affected_open_purchases"/>
+            <button name="open_draft_purchases" string="Draft Purchases"/>
+            <field name="draft_purchases"/>
+            <button name="open_pending_receipt_purchases"
+                string="Pending Receipt Purchases"/>
+            <field name="pending_receipt_purchases"/>
+            <button name="open_past_purchases" string="Past Purchases"/>
+            <field name="past_purchases"/>
+        </group>
     </group>
 </form>
