@@ -93,12 +93,17 @@ class FoodHealthRegistration(sequence_ordered(), ModelSQL, ModelView):
         return current_version.id if current_version else None
 
     def _get_current_version(self):
-        current_versions = [v for v in self.versions if v.current]
+        versions = list(self.versions or [])
+        current_versions = [v for v in versions if v.current]
         if current_versions:
             return current_versions[0]
-        if self.versions:
-            return self.versions[-1]
+        if versions:
+            return versions[-1]
         return None
+
+    @staticmethod
+    def default_versions():
+        return ()
 
     @fields.depends('expiry_date')
     def on_change_with_expired(self, name=None):
@@ -106,10 +111,16 @@ class FoodHealthRegistration(sequence_ordered(), ModelSQL, ModelView):
         today = Date.today()
         return bool(self.expiry_date and self.expiry_date < today)
 
-    @fields.depends('current_version')
+    @fields.depends('expiry_date', 'expiry_notice_days')
     def on_change_with_request_update(self, name=None):
-        current_version = self._get_current_version()
-        return bool(current_version and current_version.request_update)
+        Date = Pool().get('ir.date')
+        today = Date.today()
+        notice_days = self.expiry_notice_days or 0
+        if not self.expiry_date or not notice_days:
+            return False
+        if self.expiry_date < today:
+            return False
+        return self.expiry_date <= today + timedelta(days=notice_days)
 
     @classmethod
     def search_request_update(cls, name, clause):
@@ -232,7 +243,8 @@ class FoodHealthRegistrationVersion(sequence_ordered(), ModelSQL, ModelView):
         today = Date.today()
         return bool(self.expiry_date and self.expiry_date < today)
 
-    @fields.depends('expiry_date', '_parent_registration.expiry_notice_days')
+    @fields.depends('registration', 'expiry_date',
+        '_parent_registration.expiry_notice_days')
     def on_change_with_request_update(self, name=None):
         Date = Pool().get('ir.date')
         today = Date.today()
@@ -414,12 +426,17 @@ class FoodOrigin(sequence_ordered(), ModelSQL, ModelView):
         return current_version.id if current_version else None
 
     def _get_current_version(self):
-        current_versions = [v for v in self.versions if v.current]
+        versions = list(self.versions or [])
+        current_versions = [v for v in versions if v.current]
         if current_versions:
             return current_versions[0]
-        if self.versions:
-            return self.versions[-1]
+        if versions:
+            return versions[-1]
         return None
+
+    @staticmethod
+    def default_versions():
+        return ()
 
     def get_country(self, name):
         return self.country_ref.id if self.country_ref else None
@@ -680,12 +697,17 @@ class FoodAnalysis(sequence_ordered(), ModelSQL, ModelView):
         return current_version.id if current_version else None
 
     def _get_current_version(self):
-        current_versions = [v for v in self.versions if v.current]
+        versions = list(self.versions or [])
+        current_versions = [v for v in versions if v.current]
         if current_versions:
             return current_versions[0]
-        if self.versions:
-            return self.versions[-1]
+        if versions:
+            return versions[-1]
         return None
+
+    @staticmethod
+    def default_versions():
+        return ()
 
     @fields.depends('next_analysis_date')
     def on_change_with_due(self, name=None):
@@ -693,10 +715,16 @@ class FoodAnalysis(sequence_ordered(), ModelSQL, ModelView):
         today = Date.today()
         return bool(self.next_analysis_date and self.next_analysis_date < today)
 
-    @fields.depends('current_version')
+    @fields.depends('next_analysis_date', 'review_notice_days')
     def on_change_with_request_update(self, name=None):
-        current_version = self._get_current_version()
-        return bool(current_version and current_version.request_update)
+        Date = Pool().get('ir.date')
+        today = Date.today()
+        notice_days = self.review_notice_days or 0
+        if not self.next_analysis_date or not notice_days:
+            return False
+        if self.next_analysis_date < today:
+            return False
+        return self.next_analysis_date <= today + timedelta(days=notice_days)
 
     @classmethod
     def search_request_update(cls, name, clause):
@@ -808,7 +836,8 @@ class FoodAnalysisVersion(sequence_ordered(), ModelSQL, ModelView):
         today = Date.today()
         return bool(self.next_analysis_date and self.next_analysis_date < today)
 
-    @fields.depends('next_analysis_date', '_parent_analysis.review_notice_days')
+    @fields.depends('analysis', 'next_analysis_date',
+        '_parent_analysis.review_notice_days')
     def on_change_with_request_update(self, name=None):
         Date = Pool().get('ir.date')
         today = Date.today()

@@ -107,7 +107,9 @@ class ComplianceTemplate(DeactivableMixin, ModelSQL, ModelView):
         'Scope Type', required=True, ondelete='RESTRICT',
         help='Scope where the template applies. Example: Raw Material.')
     product_category = fields.Many2One('product.category', 'Product Category',
-        ondelete='RESTRICT',
+        ondelete='RESTRICT', context={
+            'company': Eval('company', -1),
+            }, depends=['company'],
         help='Optional product category to narrow the template. Example: '
         'Ingredients.')
     requirements = fields.One2Many('supplier.compliance.template.requirement',
@@ -591,6 +593,9 @@ class Record(DeactivableMixin, ModelSQL, ModelView):
         help='Company that owns the compliance record. Example: Valero Forn '
         'Tradicional, S. L.')
     party = fields.Many2One('party.party', 'Supplier', required=True,
+        context={
+            'company': Eval('company', -1),
+            }, depends=['company'],
         ondelete='CASCADE',
         help='Approved supplier for this record. Example: APLIENA S.A.')
     product_template = fields.Many2One('product.template', 'Product',
@@ -605,6 +610,9 @@ class Record(DeactivableMixin, ModelSQL, ModelView):
                     ],
                 ()),
             ],
+        context={
+            'company': Eval('company', -1),
+            },
         depends=['party', 'company'],
         ondelete='CASCADE',
         help='Internal product affected by this compliance record. Example: '
@@ -622,6 +630,9 @@ class Record(DeactivableMixin, ModelSQL, ModelView):
                     ],
                 ()),
             ],
+        context={
+            'company': Eval('company', -1),
+            },
         depends=['party', 'product_template', 'company'],
         help='Supplier product card linked to the record. Example: supplier '
         'code 946 for APLIENA.')
@@ -677,9 +688,10 @@ class Record(DeactivableMixin, ModelSQL, ModelView):
                     ],
                 ],
             context={
+                'company': Eval('company', -1),
                 'related_party': Eval('party', -1),
                 },
-            depends=['party'],
+            depends=['company', 'party'],
             help='Alert or crisis contacts copied from the supplier. Example: '
             'quality email and emergency phone.'),
         'get_contact_mechanisms', setter='set_contact_mechanisms')
@@ -1238,9 +1250,11 @@ class Record(DeactivableMixin, ModelSQL, ModelView):
                     'contact_mechanisms': value,
                     })
 
-    @fields.depends('product_supplier', 'scope_type', 'requirements',
-        'certificates', 'food_analyses', 'packaging_compliances',
-        'packaging_migration_tests')
+    @fields.depends('product_supplier', '_parent_product_supplier.party',
+        '_parent_product_supplier.template', '_parent_product_supplier.code',
+        '_parent_product_supplier.name', 'scope_type', '_parent_scope_type.id',
+        'requirements', 'certificates', 'food_analyses',
+        'packaging_compliances', 'packaging_migration_tests')
     def on_change_product_supplier(self):
         if not self.product_supplier:
             return
@@ -1254,14 +1268,22 @@ class Record(DeactivableMixin, ModelSQL, ModelView):
             self.name = self.product_supplier.rec_name
         self._apply_compliance_template()
 
-    @fields.depends('party', 'product_template', 'company', 'product_supplier',
-        'scope_type', 'requirements', 'certificates', 'food_analyses',
+    @fields.depends('party', '_parent_party.id', 'product_template',
+        '_parent_product_template.id', 'company', '_parent_company.id',
+        'product_supplier', '_parent_product_supplier.party',
+        '_parent_product_supplier.template', '_parent_product_supplier.code',
+        '_parent_product_supplier.name', 'scope_type', '_parent_scope_type.id',
+        'requirements', 'certificates', 'food_analyses',
         'packaging_compliances', 'packaging_migration_tests')
     def on_change_party(self):
         self._sync_product_supplier()
 
-    @fields.depends('party', 'product_template', 'company', 'product_supplier',
-        'scope_type', 'requirements', 'certificates', 'food_analyses',
+    @fields.depends('party', '_parent_party.id', 'product_template',
+        '_parent_product_template.id', 'company', '_parent_company.id',
+        'product_supplier', '_parent_product_supplier.party',
+        '_parent_product_supplier.template', '_parent_product_supplier.code',
+        '_parent_product_supplier.name', 'scope_type', '_parent_scope_type.id',
+        'requirements', 'certificates', 'food_analyses',
         'packaging_compliances', 'packaging_migration_tests')
     def on_change_product_template(self):
         if not getattr(self, 'product_template', None):
@@ -1270,32 +1292,52 @@ class Record(DeactivableMixin, ModelSQL, ModelView):
             return
         self._sync_product_supplier()
 
-    @fields.depends('party', 'product_template', 'company', 'product_supplier',
-        'scope_type', 'requirements', 'certificates', 'food_analyses',
+    @fields.depends('party', '_parent_party.id', 'product_template',
+        '_parent_product_template.id', 'company', '_parent_company.id',
+        'product_supplier', '_parent_product_supplier.party',
+        '_parent_product_supplier.template', '_parent_product_supplier.code',
+        '_parent_product_supplier.name', 'scope_type', '_parent_scope_type.id',
+        'requirements', 'certificates', 'food_analyses',
         'packaging_compliances', 'packaging_migration_tests')
     def on_change_code(self):
         self._sync_product_supplier()
 
-    @fields.depends('party', 'product_template', 'company', 'product_supplier',
-        'scope_type', 'requirements', 'certificates', 'food_analyses',
+    @fields.depends('party', '_parent_party.id', 'product_template',
+        '_parent_product_template.id', 'company', '_parent_company.id',
+        'product_supplier', '_parent_product_supplier.party',
+        '_parent_product_supplier.template', '_parent_product_supplier.code',
+        '_parent_product_supplier.name', 'scope_type', '_parent_scope_type.id',
+        'requirements', 'certificates', 'food_analyses',
         'packaging_compliances', 'packaging_migration_tests')
     def on_change_name(self):
         self._sync_product_supplier()
 
-    @fields.depends('party', 'product_template', 'company', 'product_supplier',
-        'scope_type', 'requirements', 'certificates', 'food_analyses',
+    @fields.depends('party', '_parent_party.id', 'product_template',
+        '_parent_product_template.id', 'company', '_parent_company.id',
+        'product_supplier', '_parent_product_supplier.party',
+        '_parent_product_supplier.template', '_parent_product_supplier.code',
+        '_parent_product_supplier.name', 'scope_type', '_parent_scope_type.id',
+        'requirements', 'certificates', 'food_analyses',
         'packaging_compliances', 'packaging_migration_tests')
     def on_change_external_article_name(self):
         self._sync_product_supplier()
 
-    @fields.depends('party', 'product_template', 'company', 'product_supplier',
-        'scope_type', 'requirements', 'certificates', 'food_analyses',
+    @fields.depends('party', '_parent_party.id', 'product_template',
+        '_parent_product_template.id', 'company', '_parent_company.id',
+        'product_supplier', '_parent_product_supplier.party',
+        '_parent_product_supplier.template', '_parent_product_supplier.code',
+        '_parent_product_supplier.name', 'scope_type', '_parent_scope_type.id',
+        'requirements', 'certificates', 'food_analyses',
         'packaging_compliances', 'packaging_migration_tests')
     def on_change_scope_type(self):
         self._apply_compliance_template()
 
-    @fields.depends('party', 'product_template', 'company', 'product_supplier',
-        'scope_type', 'requirements', 'certificates', 'food_analyses',
+    @fields.depends('party', '_parent_party.id', 'product_template',
+        '_parent_product_template.id', 'company', '_parent_company.id',
+        'product_supplier', '_parent_product_supplier.party',
+        '_parent_product_supplier.template', '_parent_product_supplier.code',
+        '_parent_product_supplier.name', 'scope_type', '_parent_scope_type.id',
+        'requirements', 'certificates', 'food_analyses',
         'packaging_compliances', 'packaging_migration_tests')
     def _sync_product_supplier(self):
         ProductSupplier = Pool().get('purchase.product_supplier')
@@ -1474,7 +1516,7 @@ class Record(DeactivableMixin, ModelSQL, ModelView):
 
 class RecordStateHistory(ModelSQL, ModelView):
     __name__ = 'supplier.compliance.record.state.history'
-    _rec_name = 'to_state'
+    _rec_name = 'summary'
     _order = [('changed_at', 'DESC'), ('id', 'DESC')]
 
     record = fields.Many2One('supplier.compliance.record', 'Record',
@@ -1488,10 +1530,25 @@ class RecordStateHistory(ModelSQL, ModelView):
         help='Date and time when the transition was recorded.')
     changed_by = fields.Many2One('res.user', 'Changed By',
         help='User who triggered the state change. Example: quality manager.')
+    summary = fields.Function(fields.Char('Summary'),
+        'get_summary', searcher='search_summary')
 
     @staticmethod
     def default_changed_at():
         return datetime.now()
+
+    def get_summary(self, name):
+        state_names = dict(RECORD_STATES)
+        parts = []
+        if self.record:
+            parts.append(self.record.rec_name)
+        if self.to_state:
+            parts.append(state_names.get(self.to_state, self.to_state))
+        return ' - '.join(parts)
+
+    @classmethod
+    def search_summary(cls, name, clause):
+        return [('to_state',) + tuple(clause[1:])]
 
 
 class Requirement(sequence_ordered(), ModelSQL, ModelView):
@@ -1548,26 +1605,41 @@ class Requirement(sequence_ordered(), ModelSQL, ModelView):
         return current_version.id if current_version else None
 
     def _get_current_version(self):
-        current_versions = [v for v in self.versions if v.current]
+        versions = list(self.versions or [])
+        current_versions = [v for v in versions if v.current]
         if current_versions:
             return current_versions[0]
-        if self.versions:
-            return self.versions[-1]
+        if versions:
+            return versions[-1]
         return None
+
+    @staticmethod
+    def default_versions():
+        return ()
 
     @staticmethod
     def default_status():
         return 'missing'
 
-    @fields.depends('current_version')
+    @fields.depends('expiry_date')
     def on_change_with_expired(self, name=None):
-        current_version = self._get_current_version()
-        return bool(current_version and current_version.expired)
+        Date = Pool().get('ir.date')
+        today = Date.today()
+        return bool(self.expiry_date and self.expiry_date < today)
 
-    @fields.depends('current_version')
+    @fields.depends('requirement_type', 'expiry_date',
+        '_parent_requirement_type.expiry_notice_days')
     def on_change_with_request_update(self, name=None):
-        current_version = self._get_current_version()
-        return bool(current_version and current_version.request_update)
+        Date = Pool().get('ir.date')
+        today = Date.today()
+        notice_days = 0
+        if self.requirement_type:
+            notice_days = self.requirement_type.expiry_notice_days or 0
+        if not self.expiry_date or not notice_days:
+            return False
+        if self.expiry_date < today:
+            return False
+        return self.expiry_date <= today + timedelta(days=notice_days)
 
     @classmethod
     def search_request_update(cls, name, clause):
@@ -1679,7 +1751,8 @@ class RequirementVersion(sequence_ordered(), ModelSQL, ModelView):
         today = Date.today()
         return bool(self.expiry_date and self.expiry_date < today)
 
-    @fields.depends('expiry_date', '_parent_requirement.requirement_type')
+    @fields.depends('requirement', 'expiry_date',
+        '_parent_requirement.requirement_type')
     def on_change_with_request_update(self, name=None):
         Date = Pool().get('ir.date')
         today = Date.today()
@@ -1824,22 +1897,36 @@ class Certificate(sequence_ordered(), ModelSQL, ModelView):
         return current_version.id if current_version else None
 
     def _get_current_version(self):
-        current_versions = [v for v in self.versions if v.current]
+        versions = list(self.versions or [])
+        current_versions = [v for v in versions if v.current]
         if current_versions:
             return current_versions[0]
-        if self.versions:
-            return self.versions[-1]
+        if versions:
+            return versions[-1]
         return None
 
-    @fields.depends('current_version')
-    def on_change_with_expired(self, name=None):
-        current_version = self._get_current_version()
-        return bool(current_version and current_version.expired)
+    @staticmethod
+    def default_versions():
+        return ()
 
-    @fields.depends('current_version')
+    @fields.depends('expiry_date')
+    def on_change_with_expired(self, name=None):
+        Date = Pool().get('ir.date')
+        today = Date.today()
+        return bool(self.expiry_date and self.expiry_date < today)
+
+    @fields.depends('scheme', 'expiry_date', '_parent_scheme.expiry_notice_days')
     def on_change_with_request_update(self, name=None):
-        current_version = self._get_current_version()
-        return bool(current_version and current_version.request_update)
+        Date = Pool().get('ir.date')
+        today = Date.today()
+        notice_days = 0
+        if self.scheme:
+            notice_days = self.scheme.expiry_notice_days or 0
+        if not self.expiry_date or not notice_days:
+            return False
+        if self.expiry_date < today:
+            return False
+        return self.expiry_date <= today + timedelta(days=notice_days)
 
     @classmethod
     def search_request_update(cls, name, clause):
@@ -1937,7 +2024,7 @@ class CertificateVersion(sequence_ordered(), ModelSQL, ModelView):
         today = Date.today()
         return bool(self.expiry_date and self.expiry_date < today)
 
-    @fields.depends('expiry_date', '_parent_certificate.scheme')
+    @fields.depends('certificate', 'expiry_date', '_parent_certificate.scheme')
     def on_change_with_request_update(self, name=None):
         Date = Pool().get('ir.date')
         today = Date.today()

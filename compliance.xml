@@ -465,6 +465,187 @@ the full copyright notices and license terms. -->
             <field name="group" ref="group_supplier_compliance_admin"/>
         </record>
 
+        <record model="ir.model.button" id="record_set_state_draft_button">
+            <field name="name">set_state_draft</field>
+            <field name="string">Draft</field>
+            <field name="model">supplier.compliance.record</field>
+        </record>
+        <record model="ir.model.button-res.group" id="record_set_state_draft_button_group">
+            <field name="button" ref="record_set_state_draft_button"/>
+            <field name="group" ref="group_supplier_compliance"/>
+        </record>
+        <record model="ir.model.button" id="record_set_state_pending_documents_button">
+            <field name="name">set_state_pending_documents</field>
+            <field name="string">Pending Documents</field>
+            <field name="model">supplier.compliance.record</field>
+        </record>
+        <record model="ir.model.button-res.group" id="record_set_state_pending_documents_button_group">
+            <field name="button" ref="record_set_state_pending_documents_button"/>
+            <field name="group" ref="group_supplier_compliance"/>
+        </record>
+        <record model="ir.model.button" id="record_set_state_approved_button">
+            <field name="name">set_state_approved</field>
+            <field name="string">Approved</field>
+            <field name="model">supplier.compliance.record</field>
+        </record>
+        <record model="ir.model.button-res.group" id="record_set_state_approved_button_group">
+            <field name="button" ref="record_set_state_approved_button"/>
+            <field name="group" ref="group_supplier_compliance"/>
+        </record>
+        <record model="ir.model.button" id="record_set_state_conditional_button">
+            <field name="name">set_state_conditional</field>
+            <field name="string">Conditional</field>
+            <field name="model">supplier.compliance.record</field>
+        </record>
+        <record model="ir.model.button-res.group" id="record_set_state_conditional_button_group">
+            <field name="button" ref="record_set_state_conditional_button"/>
+            <field name="group" ref="group_supplier_compliance"/>
+        </record>
+        <record model="ir.model.button" id="record_set_state_suspended_button">
+            <field name="name">set_state_suspended</field>
+            <field name="string">Suspended</field>
+            <field name="model">supplier.compliance.record</field>
+        </record>
+        <record model="ir.model.button-res.group" id="record_set_state_suspended_button_group">
+            <field name="button" ref="record_set_state_suspended_button"/>
+            <field name="group" ref="group_supplier_compliance"/>
+        </record>
+        <record model="ir.model.button" id="record_set_state_expired_button">
+            <field name="name">set_state_expired</field>
+            <field name="string">Expired</field>
+            <field name="model">supplier.compliance.record</field>
+        </record>
+        <record model="ir.model.button-res.group" id="record_set_state_expired_button_group">
+            <field name="button" ref="record_set_state_expired_button"/>
+            <field name="group" ref="group_supplier_compliance"/>
+        </record>
+        <record model="ir.model.button" id="record_set_state_withdrawn_button">
+            <field name="name">set_state_withdrawn</field>
+            <field name="string">Withdrawn</field>
+            <field name="model">supplier.compliance.record</field>
+        </record>
+        <record model="ir.model.button-res.group" id="record_set_state_withdrawn_button_group">
+            <field name="button" ref="record_set_state_withdrawn_button"/>
+            <field name="group" ref="group_supplier_compliance"/>
+        </record>
+        <record model="ir.model.button" id="record_set_state_rejected_button">
+            <field name="name">set_state_rejected</field>
+            <field name="string">Rejected</field>
+            <field name="model">supplier.compliance.record</field>
+        </record>
+        <record model="ir.model.button-res.group" id="record_set_state_rejected_button_group">
+            <field name="button" ref="record_set_state_rejected_button"/>
+            <field name="group" ref="group_supplier_compliance"/>
+        </record>
+        <record model="ir.model.button" id="record_create_template_button">
+            <field name="name">create_template</field>
+            <field name="string">Create Template</field>
+            <field name="model">supplier.compliance.record</field>
+        </record>
+        <record model="ir.model.button-res.group" id="record_create_template_button_group">
+            <field name="button" ref="record_create_template_button"/>
+            <field name="group" ref="group_supplier_compliance"/>
+        </record>
+        <record model="ir.model.button" id="record_open_affected_open_purchases_button">
+            <field name="name">open_affected_open_purchases</field>
+            <field name="string">Affected Open Purchases</field>
+            <field name="model">supplier.compliance.record</field>
+        </record>
+        <record model="ir.model.button-res.group" id="record_open_affected_open_purchases_button_group">
+            <field name="button" ref="record_open_affected_open_purchases_button"/>
+            <field name="group" ref="group_supplier_compliance"/>
+        </record>
+        <record model="ir.model.button" id="record_open_draft_purchases_button">
+            <field name="name">open_draft_purchases</field>
+            <field name="string">Draft Purchases</field>
+            <field name="model">supplier.compliance.record</field>
+        </record>
+        <record model="ir.model.button-res.group" id="record_open_draft_purchases_button_group">
+            <field name="button" ref="record_open_draft_purchases_button"/>
+            <field name="group" ref="group_supplier_compliance"/>
+        </record>
+        <record model="ir.model.button" id="record_open_pending_receipt_purchases_button">
+            <field name="name">open_pending_receipt_purchases</field>
+            <field name="string">Pending Receipt Purchases</field>
+            <field name="model">supplier.compliance.record</field>
+        </record>
+        <record model="ir.model.button-res.group" id="record_open_pending_receipt_purchases_button_group">
+            <field name="button" ref="record_open_pending_receipt_purchases_button"/>
+            <field name="group" ref="group_supplier_compliance"/>
+        </record>
+        <record model="ir.model.button" id="record_open_past_purchases_button">
+            <field name="name">open_past_purchases</field>
+            <field name="string">Past Purchases</field>
+            <field name="model">supplier.compliance.record</field>
+        </record>
+        <record model="ir.model.button-res.group" id="record_open_past_purchases_button_group">
+            <field name="button" ref="record_open_past_purchases_button"/>
+            <field name="group" ref="group_supplier_compliance"/>
+        </record>
+        <record model="ir.model.button" id="requirement_new_version_button">
+            <field name="name">new_version</field>
+            <field name="string">New Version</field>
+            <field name="model">supplier.compliance.requirement</field>
+        </record>
+        <record model="ir.model.button-res.group" id="requirement_new_version_button_group">
+            <field name="button" ref="requirement_new_version_button"/>
+            <field name="group" ref="group_supplier_compliance"/>
+        </record>
+        <record model="ir.model.button" id="certificate_new_version_button">
+            <field name="name">new_version</field>
+            <field name="string">New Version</field>
+            <field name="model">supplier.compliance.certificate</field>
+        </record>
+        <record model="ir.model.button-res.group" id="certificate_new_version_button_group">
+            <field name="button" ref="certificate_new_version_button"/>
+            <field name="group" ref="group_supplier_compliance"/>
+        </record>
+        <record model="ir.model.button" id="food_health_registration_new_version_button">
+            <field name="name">new_version</field>
+            <field name="string">New Version</field>
+            <field name="model">supplier.compliance.food.health_registration</field>
+        </record>
+        <record model="ir.model.button-res.group" id="food_health_registration_new_version_button_group">
+            <field name="button" ref="food_health_registration_new_version_button"/>
+            <field name="group" ref="group_supplier_compliance"/>
+        </record>
+        <record model="ir.model.button" id="food_origin_new_version_button">
+            <field name="name">new_version</field>
+            <field name="string">New Version</field>
+            <field name="model">supplier.compliance.food.origin</field>
+        </record>
+        <record model="ir.model.button-res.group" id="food_origin_new_version_button_group">
+            <field name="button" ref="food_origin_new_version_button"/>
+            <field name="group" ref="group_supplier_compliance"/>
+        </record>
+        <record model="ir.model.button" id="food_analysis_new_version_button">
+            <field name="name">new_version</field>
+            <field name="string">New Version</field>
+            <field name="model">supplier.compliance.food.analysis</field>
+        </record>
+        <record model="ir.model.button-res.group" id="food_analysis_new_version_button_group">
+            <field name="button" ref="food_analysis_new_version_button"/>
+            <field name="group" ref="group_supplier_compliance"/>
+        </record>
+        <record model="ir.model.button" id="packaging_compliance_new_version_button">
+            <field name="name">new_version</field>
+            <field name="string">New Version</field>
+            <field name="model">supplier.compliance.packaging.compliance</field>
+        </record>
+        <record model="ir.model.button-res.group" id="packaging_compliance_new_version_button_group">
+            <field name="button" ref="packaging_compliance_new_version_button"/>
+            <field name="group" ref="group_supplier_compliance"/>
+        </record>
+        <record model="ir.model.button" id="packaging_migration_test_new_version_button">
+            <field name="name">new_version</field>
+            <field name="string">New Version</field>
+            <field name="model">supplier.compliance.packaging.migration_test</field>
+        </record>
+        <record model="ir.model.button-res.group" id="packaging_migration_test_new_version_button_group">
+            <field name="button" ref="packaging_migration_test_new_version_button"/>
+            <field name="group" ref="group_supplier_compliance"/>
+        </record>
+
         <record model="ir.model.access" id="access_scope_type">
             <field name="model">supplier.compliance.scope.type</field>
             <field name="perm_read" eval="False"/>
