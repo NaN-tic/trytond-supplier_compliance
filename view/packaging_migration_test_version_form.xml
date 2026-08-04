@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<form col="4">
+    <label name="current"/>
+    <field name="current"/>
+    <label name="migration_type"/>
+    <field name="migration_type"/>
+    <label name="laboratory"/>
+    <field name="laboratory"/>
+    <label name="report_number"/>
+    <field name="report_number"/>
+    <label name="test_date"/>
+    <field name="test_date"/>
+    <label name="next_review_date"/>
+    <field name="next_review_date"/>
+    <label name="due"/>
+    <field name="due"/>
+    <label name="conform"/>
+    <field name="conform"/>
+    <label name="food_simulant"/>
+    <field name="food_simulant"/>
+    <label name="duration"/>
+    <field name="duration"/>
+    <label name="temperature"/>
+    <field name="temperature"/>
+    <label name="result"/>
+    <field name="result"/>
+    <label name="limit_value"/>
+    <field name="limit_value"/>
+    <separator string="Notes" id="notes" colspan="4"/>
+    <field name="notes" colspan="4"/>
+    <field name="attachments" colspan="4"/>
+</form>

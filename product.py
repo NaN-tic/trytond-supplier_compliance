@@ -9,4 +9,6 @@ class Template(metaclass=PoolMeta):
     __name__ = 'product.template'
 
     compliance_records = fields.One2Many('supplier.compliance.record',
-        'product_template', 'Compliance Records')
+        'product_template', 'Compliance Records',
+        help='Compliance records linked to this product. Example: the '
+        'approved supplier files for a flour mix.')

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<tree sequence="sequence">
+    <field name="sequence" tree_invisible="1"/>
+    <field name="kind"/>
+    <field name="primary_material"/>
+    <field name="food_contact"/>
+    <field name="contact_type"/>
+    <field name="recycled"/>
+    <field name="recycled_percentage"/>
+</tree>

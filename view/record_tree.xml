@@ -1,13 +1,16 @@
 <?xml version="1.0"?>
 <tree>
-    <field name="needs_review"/>
+    <field name="expired_documents"/>
+    <field name="request_update"/>
     <field name="party"/>
     <field name="name"/>
     <field name="product_template"/>
     <field name="scope_type"/>
     <field name="state"/>
+    <field name="withdrawal_date"/>
     <field name="start_date"/>
     <field name="end_date"/>
     <field name="expired"/>
+    <field name="affected_open_purchases"/>
     <field name="active"/>
 </tree>

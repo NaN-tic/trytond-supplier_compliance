@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<tree sequence="sequence">
+    <field name="sequence" tree_invisible="1"/>
+    <field name="current"/>
+    <field name="country"/>
+    <field name="percentage"/>
+    <field name="document_confirmed"/>
+    <field name="start_date"/>
+    <field name="end_date"/>
+</tree>

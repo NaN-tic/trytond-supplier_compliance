@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<tree sequence="sequence">
+    <field name="sequence" tree_invisible="1"/>
+    <field name="reference"/>
+    <field name="declared_regulation"/>
+    <field name="expiry_notice_days"/>
+</tree>

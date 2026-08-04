@@ -1,40 +1,44 @@
 <?xml version="1.0"?>
-<form col="6">
-    <label name="company"/>
-    <field name="company"/>
-    <label name="state"/>
-    <field name="state"/>
-    <label name="party"/>
-    <field name="party"/>
-    <label name="scope_type"/>
-    <field name="scope_type"/>
-    <label name="product_template"/>
-    <field name="product_template"/>
-    <label name="product_supplier"/>
-    <field name="product_supplier"/>
-    <label name="code"/>
-    <field name="code"/>
-    <label name="name"/>
-    <field name="name"/>
-    <label name="external_article_name"/>
-    <field name="external_article_name" colspan="3"/>
-    <label name="active"/>
-    <field name="active"/>
-    <label name="start_date"/>
-    <field name="start_date"/>
-    <label name="end_date"/>
-    <field name="end_date"/>
-    <label name="expired"/>
-    <field name="expired"/>
-    <notebook colspan="6">
-        <page string="General" id="general">
-            <separator string="Notes" id="notes" colspan="6"/>
-            <field name="notes" colspan="6"/>
-        </page>
-        <page string="Contacts" id="contacts">
-            <field name="contact_mechanisms" colspan="6"
-                view_ids="party.contact_mechanism_view_tree_sequence,party.contact_mechanism_view_form"/>
-        </page>
+<form col="12">
+    <group col="6" colspan="12" id="header_main">
+        <label name="company"/>
+        <field name="company"/>
+        <label name="party"/>
+        <field name="party"/>
+        <label name="scope_type"/>
+        <field name="scope_type"/>
+    </group>
+    <group col="6" colspan="12" id="header_product">
+        <label name="product_template"/>
+        <field name="product_template"/>
+        <label name="product_supplier"/>
+        <field name="product_supplier"/>
+        <newline/>
+        <label name="code"/>
+        <field name="code"/>
+        <label name="name"/>
+        <field name="name"/>
+        <newline/>
+        <label name="external_article_name"/>
+        <field name="external_article_name" colspan="3"/>
+        <button name="create_template" string="Create Template"/>
+
+    </group>
+    <group col="6" colspan="12" id="header_control">
+        <label name="start_date"/>
+        <field name="start_date"/>
+        <label name="end_date"/>
+        <field name="end_date"/>
+        <label name="active"/>
+        <field name="active"/>
+        <label name="expired"/>
+        <field name="expired"/>
+        <label name="purchase_blocked"/>
+        <field name="purchase_blocked"/>
+        <label name="existing_stock"/>
+        <field name="existing_stock"/>
+    </group>
+    <notebook colspan="12">
         <page string="Requirements" id="requirements">
             <field name="requirements" colspan="6"
                 view_ids="supplier_compliance.requirement_view_tree,supplier_compliance.requirement_view_form"/>
@@ -43,8 +47,97 @@
             <field name="certificates" colspan="6"
                 view_ids="supplier_compliance.certificate_view_tree,supplier_compliance.certificate_view_form"/>
         </page>
+        <page string="Food" id="food">
+            <notebook colspan="6">
+                <page string="Registrations" id="food_registrations">
+                    <field name="food_health_registrations" colspan="6"
+                        view_ids="supplier_compliance.food_health_registration_view_tree,supplier_compliance.food_health_registration_view_form"/>
+                </page>
+                <page string="Allergens" id="food_allergens">
+                    <field name="food_allergens" colspan="6"
+                        view_ids="supplier_compliance.food_allergen_view_tree,supplier_compliance.food_allergen_view_form"/>
+                </page>
+                <page string="Origins" id="food_origins">
+                    <field name="food_origins" colspan="6"
+                        view_ids="supplier_compliance.food_origin_view_tree,supplier_compliance.food_origin_view_form"/>
+                </page>
+                <page string="Analyses" id="food_analyses">
+                    <field name="food_analyses" colspan="6"
+                        view_ids="supplier_compliance.food_analysis_view_tree,supplier_compliance.food_analysis_view_form"/>
+                </page>
+            </notebook>
+        </page>
+        <page string="Packaging" id="packaging">
+            <label name="packaging_family"/>
+            <field name="packaging_family" colspan="5"/>
+            <notebook colspan="6">
+                <page string="Specifications" id="packaging_specifications">
+                    <field name="packaging_specifications" colspan="6"
+                        view_ids="supplier_compliance.packaging_specification_view_tree,supplier_compliance.packaging_specification_view_form"/>
+                </page>
+                <page string="Compliances" id="packaging_compliances">
+                    <field name="packaging_compliances" colspan="6"
+                        view_ids="supplier_compliance.packaging_compliance_view_tree,supplier_compliance.packaging_compliance_view_form"/>
+                </page>
+                <page string="Migration Tests" id="packaging_migration_tests">
+                    <field name="packaging_migration_tests" colspan="6"
+                        view_ids="supplier_compliance.packaging_migration_test_view_tree,supplier_compliance.packaging_migration_test_view_form"/>
+                </page>
+            </notebook>
+        </page>
+        <page string="Withdrawal" id="withdrawal">
+            <label name="withdrawal_date"/>
+            <field name="withdrawal_date"/>
+            <label name="authorized_by"/>
+            <field name="authorized_by"/>
+            <label name="replacement_record"/>
+            <field name="replacement_record" colspan="3"/>
+            <label name="withdrawal_reason"/>
+            <field name="withdrawal_reason" colspan="5"/>
+        </page>
+        <page string="Notes" id="notes">
+            <field name="notes" colspan="6"/>
+        </page>
+        <page string="Contacts" id="contacts">
+            <field name="contact_mechanisms" colspan="6"
+                view_ids="party.contact_mechanism_view_tree_sequence,party.contact_mechanism_view_form"/>
+        </page>
         <page string="Attachments" id="attachments">
             <field name="attachments" colspan="6"/>
         </page>
+        <page string="State History" id="state_history">
+            <field name="state_history" colspan="6"
+                view_ids="supplier_compliance.record_state_history_view_tree,supplier_compliance.record_state_history_view_form"/>
+        </page>
     </notebook>
+
+    <group col="4" colspan="12" id="footer">
+    <group col="3" colspan="2" id="state_actions">
+        <label name="state"/>
+        <field name="state" readonly="1"/>
+        <newline/>
+        <button name="set_state_draft" string="Draft"/>
+        <button name="set_state_pending_documents" string="Pending Documents"/>
+        <button name="set_state_approved" string="Approved"/>
+        <button name="set_state_conditional" string="Conditional"/>
+        <button name="set_state_suspended" string="Suspended"/>
+        <button name="set_state_expired" string="Expired"/>
+        <button name="set_state_withdrawn" string="Withdrawn"/>
+        <button name="set_state_rejected" string="Rejected"/>
+    </group>
+    <group/>
+
+    <group col="2"  id="purchase_links">
+        <button name="open_affected_open_purchases"
+            string="Affected Open Purchases"/>
+        <field name="affected_open_purchases"/>
+        <button name="open_draft_purchases" string="Draft Purchases"/>
+        <field name="draft_purchases"/>
+        <button name="open_pending_receipt_purchases"
+            string="Pending Receipt Purchases"/>
+        <field name="pending_receipt_purchases"/>
+        <button name="open_past_purchases" string="Past Purchases"/>
+        <field name="past_purchases"/>
+    </group>
+    </group>
 </form>

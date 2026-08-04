@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <tree sequence="sequence">
     <field name="sequence" tree_invisible="1"/>
-    <field name="scheme"/>
+    <field name="current"/>
     <field name="version"/>
     <field name="certificate_number"/>
     <field name="issuer"/>

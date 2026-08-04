@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<form col="4">
+    <label name="kind"/>
+    <field name="kind"/>
+    <label name="primary_material"/>
+    <field name="primary_material"/>
+    <label name="food_contact"/>
+    <field name="food_contact"/>
+    <label name="contact_type"/>
+    <field name="contact_type"/>
+    <label name="recycled"/>
+    <field name="recycled"/>
+    <label name="recycled_percentage"/>
+    <field name="recycled_percentage"/>
+    <label name="authorized_foods"/>
+    <field name="authorized_foods"/>
+    <label name="dimensions"/>
+    <field name="dimensions"/>
+    <label name="grammage"/>
+    <field name="grammage"/>
+    <separator string="Additional Materials" id="additional_materials" colspan="4"/>
+    <field name="additional_materials" colspan="4"/>
+    <separator string="Use Conditions" id="use_conditions" colspan="4"/>
+    <field name="use_conditions" colspan="4"/>
+    <separator string="Notes" id="notes" colspan="4"/>
+    <field name="notes" colspan="4"/>
+</form>

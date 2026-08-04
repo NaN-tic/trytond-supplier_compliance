@@ -1,19 +1,22 @@
 <?xml version="1.0"?>
 <form col="4">
+    <button name="new_version" string="New Version" colspan="4"/>
     <label name="requirement_type"/>
     <field name="requirement_type"/>
+    <label name="version"/>
+    <field name="version" readonly="1"/>
     <label name="status"/>
-    <field name="status"/>
+    <field name="status" readonly="1"/>
     <label name="document_date"/>
-    <field name="document_date"/>
+    <field name="document_date" readonly="1"/>
     <label name="expiry_date"/>
-    <field name="expiry_date"/>
+    <field name="expiry_date" readonly="1"/>
     <label name="expired"/>
     <field name="expired"/>
+    <label name="request_update"/>
+    <field name="request_update"/>
     <label name="value"/>
-    <field name="value"/>
-    <separator string="Notes" id="notes" colspan="4"/>
-    <field name="notes" colspan="4"/>
-    <separator string="Attachments" id="attachments" colspan="4"/>
-    <field name="attachments" colspan="4"/>
+    <field name="value" readonly="1"/>
+    <field name="versions" colspan="4"
+        view_ids="supplier_compliance.requirement_version_view_tree,supplier_compliance.requirement_version_view_form"/>
 </form>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<form col="4">
+    <button name="new_version" string="New Version" colspan="4"/>
+    <label name="reference"/>
+    <field name="reference"/>
+    <label name="status"/>
+    <field name="status" readonly="1"/>
+    <label name="declared_regulation"/>
+    <field name="declared_regulation" readonly="1"/>
+    <label name="expired"/>
+    <field name="expired"/>
+    <label name="request_update"/>
+    <field name="request_update"/>
+    <label name="issue_date"/>
+    <field name="issue_date" readonly="1"/>
+    <label name="review_date"/>
+    <field name="review_date" readonly="1"/>
+    <label name="expiry_date"/>
+    <field name="expiry_date" readonly="1"/>
+    <label name="expiry_notice_days"/>
+    <field name="expiry_notice_days"/>
+    <label name="authorized_foods"/>
+    <field name="authorized_foods" readonly="1"/>
+    <separator string="Covered Materials" id="covered_materials" colspan="4"/>
+    <field name="covered_materials" colspan="4" readonly="1"/>
+    <separator string="Restrictions" id="restrictions" colspan="4"/>
+    <field name="restrictions" colspan="4" readonly="1"/>
+    <field name="versions" colspan="4"
+        view_ids="supplier_compliance.packaging_compliance_version_view_tree,supplier_compliance.packaging_compliance_version_view_form"/>
+</form>

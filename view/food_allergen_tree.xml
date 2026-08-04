@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<tree sequence="sequence">
+    <field name="sequence" tree_invisible="1"/>
+    <field name="allergen"/>
+    <field name="status"/>
+    <field name="source"/>
+    <field name="declaration_date"/>
+</tree>

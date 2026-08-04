@@ -4,16 +4,8 @@
     <field name="name"/>
     <label name="code"/>
     <field name="code"/>
-    <label name="kind"/>
-    <field name="kind"/>
     <label name="active"/>
     <field name="active"/>
-    <label name="requires_document"/>
-    <field name="requires_document"/>
-    <label name="tracks_expiry"/>
-    <field name="tracks_expiry"/>
-    <label name="expiry_notice_days"/>
-    <field name="expiry_notice_days"/>
     <separator string="Description" id="description" colspan="4"/>
     <field name="description" colspan="4"/>
 </form>

@@ -4,6 +4,8 @@
     <field name="name"/>
     <label name="code"/>
     <field name="code"/>
+    <label name="expiry_notice_days"/>
+    <field name="expiry_notice_days"/>
     <label name="active"/>
     <field name="active"/>
     <separator string="Description" id="description" colspan="4"/>

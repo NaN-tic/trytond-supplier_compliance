@@ -2,9 +2,11 @@
 <tree sequence="sequence">
     <field name="sequence" tree_invisible="1"/>
     <field name="requirement_type"/>
+    <field name="version"/>
     <field name="status"/>
     <field name="document_date"/>
     <field name="expiry_date"/>
     <field name="expired"/>
+    <field name="request_update"/>
     <field name="value"/>
 </tree>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<tree sequence="sequence">
+    <field name="sequence" tree_invisible="1"/>
+    <field name="current"/>
+    <field name="laboratory"/>
+    <field name="report_number"/>
+    <field name="test_date"/>
+    <field name="next_review_date"/>
+    <field name="due"/>
+    <field name="conform"/>
+</tree>

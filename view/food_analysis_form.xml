@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<form col="4">
+    <button name="new_version" string="New Version" colspan="4"/>
+    <label name="analysis_type"/>
+    <field name="analysis_type"/>
+    <label name="laboratory"/>
+    <field name="laboratory" readonly="1"/>
+    <label name="report_number"/>
+    <field name="report_number" readonly="1"/>
+    <label name="conform"/>
+    <field name="conform" readonly="1"/>
+    <label name="sample_date"/>
+    <field name="sample_date" readonly="1"/>
+    <label name="report_date"/>
+    <field name="report_date" readonly="1"/>
+    <label name="next_analysis_date"/>
+    <field name="next_analysis_date" readonly="1"/>
+    <label name="due"/>
+    <field name="due"/>
+    <label name="request_update"/>
+    <field name="request_update"/>
+    <label name="review_notice_days"/>
+    <field name="review_notice_days"/>
+    <label name="result"/>
+    <field name="result" readonly="1"/>
+    <field name="versions" colspan="4"
+        view_ids="supplier_compliance.food_analysis_version_view_tree,supplier_compliance.food_analysis_version_view_form"/>
+</form>

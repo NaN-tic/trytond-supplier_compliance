@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<form col="4">
+    <label name="record"/>
+    <field name="record"/>
+    <label name="changed_at"/>
+    <field name="changed_at"/>
+    <label name="from_state"/>
+    <field name="from_state"/>
+    <label name="to_state"/>
+    <field name="to_state"/>
+    <label name="changed_by"/>
+    <field name="changed_by"/>
+</form>

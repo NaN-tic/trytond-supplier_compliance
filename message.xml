@@ -13,11 +13,68 @@ the full copyright notices and license terms. -->
         <record model="ir.message" id="msg_requirement_invalid_dates">
             <field name="text">The requirement "%(requirement)s" has an expiry date earlier than its document date.</field>
         </record>
+        <record model="ir.message" id="msg_requirement_duplicate">
+            <field name="text">The requirement "%(requirement)s" already exists on this compliance record.</field>
+        </record>
         <record model="ir.message" id="msg_certificate_invalid_dates">
             <field name="text">The certificate "%(certificate)s" has an expiry date earlier than its issue date.</field>
         </record>
+        <record model="ir.message" id="msg_certificate_duplicate">
+            <field name="text">The certificate "%(certificate)s" already exists on this compliance record.</field>
+        </record>
         <record model="ir.message" id="msg_product_supplier_mismatch">
             <field name="text">The supplier product does not match the supplier and product selected on compliance record "%(record)s".</field>
+        </record>
+        <record model="ir.message" id="msg_food_health_registration_invalid_dates">
+            <field name="text">The food health registration "%(registration)s" has an expiry date earlier than its start date.</field>
+        </record>
+        <record model="ir.message" id="msg_food_health_registration_duplicate">
+            <field name="text">The food health registration "%(registration)s" already exists on this compliance record.</field>
+        </record>
+        <record model="ir.message" id="msg_food_origin_invalid_dates">
+            <field name="text">The food origin "%(origin)s" has an end date earlier than its start date.</field>
+        </record>
+        <record model="ir.message" id="msg_food_origin_missing_country">
+            <field name="text">The food origin "%(origin)s" must have a country.</field>
+        </record>
+        <record model="ir.message" id="msg_food_origin_duplicate">
+            <field name="text">The food origin "%(origin)s" already exists on this compliance record.</field>
+        </record>
+        <record model="ir.message" id="msg_food_analysis_invalid_dates">
+            <field name="text">The food analysis "%(analysis)s" has a report date earlier than its sample date.</field>
+        </record>
+        <record model="ir.message" id="msg_food_analysis_duplicate">
+            <field name="text">The food analysis "%(analysis)s" already exists on this compliance record.</field>
+        </record>
+        <record model="ir.message" id="msg_packaging_compliance_invalid_dates">
+            <field name="text">The packaging compliance "%(compliance)s" has an expiry date earlier than its issue date.</field>
+        </record>
+        <record model="ir.message" id="msg_packaging_compliance_duplicate">
+            <field name="text">The packaging compliance "%(compliance)s" already exists on this compliance record.</field>
+        </record>
+        <record model="ir.message" id="msg_packaging_migration_test_duplicate">
+            <field name="text">The packaging migration test "%(test)s" already exists on this compliance record.</field>
+        </record>
+        <record model="ir.message" id="msg_compliance_template_duplicate">
+            <field name="text">The compliance template "%(template)s" already exists for this company, scope type and product category.</field>
+        </record>
+        <record model="ir.message" id="msg_compliance_template_requirement_duplicate">
+            <field name="text">The requirement type "%(requirement_type)s" is repeated on compliance template "%(template)s".</field>
+        </record>
+        <record model="ir.message" id="msg_compliance_template_certificate_duplicate">
+            <field name="text">The certification scheme "%(scheme)s" is repeated on compliance template "%(template)s".</field>
+        </record>
+        <record model="ir.message" id="msg_compliance_template_food_analysis_duplicate">
+            <field name="text">The analysis type "%(analysis_type)s" is repeated on compliance template "%(template)s".</field>
+        </record>
+        <record model="ir.message" id="msg_compliance_template_packaging_migration_test_duplicate">
+            <field name="text">The migration test type "%(migration_type)s" is repeated on compliance template "%(template)s".</field>
+        </record>
+        <record model="ir.message" id="msg_record_missing_withdrawal_date">
+            <field name="text">The withdrawn compliance record "%(record)s" must have a withdrawal date.</field>
+        </record>
+        <record model="ir.message" id="msg_purchase_line_blocked_by_compliance">
+            <field name="text">The compliance record "%(record)s" can not be used on new purchases. Current state: %(state)s. Replacement article: %(replacement)s.</field>
         </record>
     </data>
 </tryton>

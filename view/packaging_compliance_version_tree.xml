@@ -1,12 +1,10 @@
 <?xml version="1.0"?>
 <tree sequence="sequence">
     <field name="sequence" tree_invisible="1"/>
-    <field name="scheme"/>
-    <field name="version"/>
-    <field name="certificate_number"/>
-    <field name="issuer"/>
+    <field name="current"/>
+    <field name="declared_regulation"/>
     <field name="issue_date"/>
     <field name="expiry_date"/>
     <field name="expired"/>
-    <field name="request_update"/>
+    <field name="status"/>
 </tree>

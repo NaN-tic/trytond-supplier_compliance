@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<form col="4">
+    <label name="company"/>
+    <field name="company"/>
+    <label name="active"/>
+    <field name="active"/>
+    <label name="name"/>
+    <field name="name"/>
+    <label name="scope_type"/>
+    <field name="scope_type"/>
+    <label name="product_category"/>
+    <field name="product_category"/>
+    <field name="requirements" colspan="4"/>
+    <field name="certificates" colspan="4"/>
+    <field name="food_analyses" colspan="4"/>
+    <field name="packaging_compliances" colspan="4"/>
+    <field name="packaging_migration_tests" colspan="4"/>
+    <separator string="Notes" id="notes" colspan="4"/>
+    <field name="notes" colspan="4"/>
+</form>

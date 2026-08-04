@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<tree>
+    <field name="name"/>
+    <field name="scope_type"/>
+    <field name="product_category"/>
+    <field name="active"/>
+</tree>

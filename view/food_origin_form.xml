@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<form col="4">
+    <button name="new_version" string="New Version" colspan="4"/>
+    <label name="ingredient"/>
+    <field name="ingredient"/>
+    <label name="country"/>
+    <field name="country" readonly="1"/>
+    <label name="percentage"/>
+    <field name="percentage" readonly="1"/>
+    <label name="document_confirmed"/>
+    <field name="document_confirmed" readonly="1"/>
+    <label name="start_date"/>
+    <field name="start_date" readonly="1"/>
+    <label name="end_date"/>
+    <field name="end_date" readonly="1"/>
+    <field name="versions" colspan="4"
+        view_ids="supplier_compliance.food_origin_version_view_tree,supplier_compliance.food_origin_version_view_form"/>
+</form>

@@ -9,14 +9,20 @@ class Party(metaclass=PoolMeta):
     __name__ = 'party.party'
 
     compliance_records = fields.One2Many('supplier.compliance.record', 'party',
-        'Compliance Records')
+        'Compliance Records',
+        help='Compliance records linked to this supplier. Example: one record '
+        'for each approved raw material.')
 
 
 class ContactMechanism(metaclass=PoolMeta):
     __name__ = 'party.contact_mechanism'
 
-    supplier_compliance_alert = fields.Boolean('Compliance Alert')
-    supplier_compliance_crisis = fields.Boolean('Compliance Crisis')
+    supplier_compliance_alert = fields.Boolean('Compliance Alert',
+        help='Use this contact for compliance alerts. Example: the quality '
+        'email that receives document expiry notices.')
+    supplier_compliance_crisis = fields.Boolean('Compliance Crisis',
+        help='Use this contact for crisis communication. Example: the 24/7 '
+        'food safety contact of the supplier.')
 
     @classmethod
     def usages(cls, _fields=None):

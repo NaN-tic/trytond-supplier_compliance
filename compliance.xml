@@ -5,12 +5,15 @@ the full copyright notices and license terms. -->
 <tryton>
     <data>
         <record model="res.group" id="group_supplier_compliance">
-            <field name="name">Supplier Compliance</field>
-            <field name="parent" ref="purchase.group_purchase"/>
+            <field name="name">Technical Sheets User</field>
         </record>
-        <record model="res.user-res.group" id="user_admin_group_supplier_compliance">
+        <record model="res.group" id="group_supplier_compliance_admin">
+            <field name="name">Technical Sheets Administration</field>
+            <field name="parent" ref="group_supplier_compliance"/>
+        </record>
+        <record model="res.user-res.group" id="user_admin_group_supplier_compliance_admin">
             <field name="user" ref="res.user_admin"/>
-            <field name="group" ref="group_supplier_compliance"/>
+            <field name="group" ref="group_supplier_compliance_admin"/>
         </record>
 
         <record model="ir.ui.view" id="scope_type_view_tree">
@@ -43,6 +46,41 @@ the full copyright notices and license terms. -->
             <field name="type">form</field>
             <field name="name">scheme_form</field>
         </record>
+        <record model="ir.ui.view" id="compliance_template_view_tree">
+            <field name="model">supplier.compliance.template</field>
+            <field name="type">tree</field>
+            <field name="name">compliance_template_tree</field>
+        </record>
+        <record model="ir.ui.view" id="compliance_template_view_form">
+            <field name="model">supplier.compliance.template</field>
+            <field name="type">form</field>
+            <field name="name">compliance_template_form</field>
+        </record>
+        <record model="ir.ui.view" id="compliance_template_requirement_view_tree">
+            <field name="model">supplier.compliance.template.requirement</field>
+            <field name="type">tree</field>
+            <field name="name">compliance_template_requirement_tree</field>
+        </record>
+        <record model="ir.ui.view" id="compliance_template_certificate_view_tree">
+            <field name="model">supplier.compliance.template.certificate</field>
+            <field name="type">tree</field>
+            <field name="name">compliance_template_certificate_tree</field>
+        </record>
+        <record model="ir.ui.view" id="compliance_template_food_analysis_view_tree">
+            <field name="model">supplier.compliance.template.food.analysis</field>
+            <field name="type">tree</field>
+            <field name="name">compliance_template_food_analysis_tree</field>
+        </record>
+        <record model="ir.ui.view" id="compliance_template_packaging_compliance_view_tree">
+            <field name="model">supplier.compliance.template.packaging.compliance</field>
+            <field name="type">tree</field>
+            <field name="name">compliance_template_packaging_compliance_tree</field>
+        </record>
+        <record model="ir.ui.view" id="compliance_template_packaging_migration_test_view_tree">
+            <field name="model">supplier.compliance.template.packaging.migration_test</field>
+            <field name="type">tree</field>
+            <field name="name">compliance_template_packaging_migration_test_tree</field>
+        </record>
         <record model="ir.ui.view" id="record_view_tree">
             <field name="model">supplier.compliance.record</field>
             <field name="type">tree</field>
@@ -52,6 +90,16 @@ the full copyright notices and license terms. -->
             <field name="model">supplier.compliance.record</field>
             <field name="type">form</field>
             <field name="name">record_form</field>
+        </record>
+        <record model="ir.ui.view" id="record_state_history_view_tree">
+            <field name="model">supplier.compliance.record.state.history</field>
+            <field name="type">tree</field>
+            <field name="name">record_state_history_tree</field>
+        </record>
+        <record model="ir.ui.view" id="record_state_history_view_form">
+            <field name="model">supplier.compliance.record.state.history</field>
+            <field name="type">form</field>
+            <field name="name">record_state_history_form</field>
         </record>
         <record model="ir.ui.view" id="requirement_view_tree">
             <field name="model">supplier.compliance.requirement</field>
@@ -63,6 +111,16 @@ the full copyright notices and license terms. -->
             <field name="type">form</field>
             <field name="name">requirement_form</field>
         </record>
+        <record model="ir.ui.view" id="requirement_version_view_tree">
+            <field name="model">supplier.compliance.requirement.version</field>
+            <field name="type">tree</field>
+            <field name="name">requirement_version_tree</field>
+        </record>
+        <record model="ir.ui.view" id="requirement_version_view_form">
+            <field name="model">supplier.compliance.requirement.version</field>
+            <field name="type">form</field>
+            <field name="name">requirement_version_form</field>
+        </record>
         <record model="ir.ui.view" id="certificate_view_tree">
             <field name="model">supplier.compliance.certificate</field>
             <field name="type">tree</field>
@@ -72,6 +130,156 @@ the full copyright notices and license terms. -->
             <field name="model">supplier.compliance.certificate</field>
             <field name="type">form</field>
             <field name="name">certificate_form</field>
+        </record>
+        <record model="ir.ui.view" id="certificate_version_view_tree">
+            <field name="model">supplier.compliance.certificate.version</field>
+            <field name="type">tree</field>
+            <field name="name">certificate_version_tree</field>
+        </record>
+        <record model="ir.ui.view" id="certificate_version_view_form">
+            <field name="model">supplier.compliance.certificate.version</field>
+            <field name="type">form</field>
+            <field name="name">certificate_version_form</field>
+        </record>
+        <record model="ir.ui.view" id="food_allergen_type_view_tree">
+            <field name="model">supplier.compliance.food.allergen.type</field>
+            <field name="type">tree</field>
+            <field name="name">food_allergen_type_tree</field>
+        </record>
+        <record model="ir.ui.view" id="food_allergen_type_view_form">
+            <field name="model">supplier.compliance.food.allergen.type</field>
+            <field name="type">form</field>
+            <field name="name">food_allergen_type_form</field>
+        </record>
+        <record model="ir.ui.view" id="food_health_registration_view_tree">
+            <field name="model">supplier.compliance.food.health_registration</field>
+            <field name="type">tree</field>
+            <field name="name">food_health_registration_tree</field>
+        </record>
+        <record model="ir.ui.view" id="food_health_registration_view_form">
+            <field name="model">supplier.compliance.food.health_registration</field>
+            <field name="type">form</field>
+            <field name="name">food_health_registration_form</field>
+        </record>
+        <record model="ir.ui.view" id="food_health_registration_version_view_tree">
+            <field name="model">supplier.compliance.food.health_registration.version</field>
+            <field name="type">tree</field>
+            <field name="name">food_health_registration_version_tree</field>
+        </record>
+        <record model="ir.ui.view" id="food_health_registration_version_view_form">
+            <field name="model">supplier.compliance.food.health_registration.version</field>
+            <field name="type">form</field>
+            <field name="name">food_health_registration_version_form</field>
+        </record>
+        <record model="ir.ui.view" id="food_allergen_view_tree">
+            <field name="model">supplier.compliance.food.allergen</field>
+            <field name="type">tree</field>
+            <field name="name">food_allergen_tree</field>
+        </record>
+        <record model="ir.ui.view" id="food_allergen_view_form">
+            <field name="model">supplier.compliance.food.allergen</field>
+            <field name="type">form</field>
+            <field name="name">food_allergen_form</field>
+        </record>
+        <record model="ir.ui.view" id="food_origin_view_tree">
+            <field name="model">supplier.compliance.food.origin</field>
+            <field name="type">tree</field>
+            <field name="name">food_origin_tree</field>
+        </record>
+        <record model="ir.ui.view" id="food_origin_view_form">
+            <field name="model">supplier.compliance.food.origin</field>
+            <field name="type">form</field>
+            <field name="name">food_origin_form</field>
+        </record>
+        <record model="ir.ui.view" id="food_origin_version_view_tree">
+            <field name="model">supplier.compliance.food.origin.version</field>
+            <field name="type">tree</field>
+            <field name="name">food_origin_version_tree</field>
+        </record>
+        <record model="ir.ui.view" id="food_origin_version_view_form">
+            <field name="model">supplier.compliance.food.origin.version</field>
+            <field name="type">form</field>
+            <field name="name">food_origin_version_form</field>
+        </record>
+        <record model="ir.ui.view" id="food_analysis_view_tree">
+            <field name="model">supplier.compliance.food.analysis</field>
+            <field name="type">tree</field>
+            <field name="name">food_analysis_tree</field>
+        </record>
+        <record model="ir.ui.view" id="food_analysis_view_form">
+            <field name="model">supplier.compliance.food.analysis</field>
+            <field name="type">form</field>
+            <field name="name">food_analysis_form</field>
+        </record>
+        <record model="ir.ui.view" id="food_analysis_version_view_tree">
+            <field name="model">supplier.compliance.food.analysis.version</field>
+            <field name="type">tree</field>
+            <field name="name">food_analysis_version_tree</field>
+        </record>
+        <record model="ir.ui.view" id="food_analysis_version_view_form">
+            <field name="model">supplier.compliance.food.analysis.version</field>
+            <field name="type">form</field>
+            <field name="name">food_analysis_version_form</field>
+        </record>
+        <record model="ir.ui.view" id="packaging_family_view_tree">
+            <field name="model">supplier.compliance.packaging.family</field>
+            <field name="type">tree</field>
+            <field name="name">packaging_family_tree</field>
+        </record>
+        <record model="ir.ui.view" id="packaging_family_view_form">
+            <field name="model">supplier.compliance.packaging.family</field>
+            <field name="type">form</field>
+            <field name="name">packaging_family_form</field>
+        </record>
+        <record model="ir.ui.view" id="packaging_specification_view_tree">
+            <field name="model">supplier.compliance.packaging.specification</field>
+            <field name="type">tree</field>
+            <field name="name">packaging_specification_tree</field>
+        </record>
+        <record model="ir.ui.view" id="packaging_specification_view_form">
+            <field name="model">supplier.compliance.packaging.specification</field>
+            <field name="type">form</field>
+            <field name="name">packaging_specification_form</field>
+        </record>
+        <record model="ir.ui.view" id="packaging_compliance_view_tree">
+            <field name="model">supplier.compliance.packaging.compliance</field>
+            <field name="type">tree</field>
+            <field name="name">packaging_compliance_tree</field>
+        </record>
+        <record model="ir.ui.view" id="packaging_compliance_view_form">
+            <field name="model">supplier.compliance.packaging.compliance</field>
+            <field name="type">form</field>
+            <field name="name">packaging_compliance_form</field>
+        </record>
+        <record model="ir.ui.view" id="packaging_compliance_version_view_tree">
+            <field name="model">supplier.compliance.packaging.compliance.version</field>
+            <field name="type">tree</field>
+            <field name="name">packaging_compliance_version_tree</field>
+        </record>
+        <record model="ir.ui.view" id="packaging_compliance_version_view_form">
+            <field name="model">supplier.compliance.packaging.compliance.version</field>
+            <field name="type">form</field>
+            <field name="name">packaging_compliance_version_form</field>
+        </record>
+        <record model="ir.ui.view" id="packaging_migration_test_view_tree">
+            <field name="model">supplier.compliance.packaging.migration_test</field>
+            <field name="type">tree</field>
+            <field name="name">packaging_migration_test_tree</field>
+        </record>
+        <record model="ir.ui.view" id="packaging_migration_test_view_form">
+            <field name="model">supplier.compliance.packaging.migration_test</field>
+            <field name="type">form</field>
+            <field name="name">packaging_migration_test_form</field>
+        </record>
+        <record model="ir.ui.view" id="packaging_migration_test_version_view_tree">
+            <field name="model">supplier.compliance.packaging.migration_test.version</field>
+            <field name="type">tree</field>
+            <field name="name">packaging_migration_test_version_tree</field>
+        </record>
+        <record model="ir.ui.view" id="packaging_migration_test_version_view_form">
+            <field name="model">supplier.compliance.packaging.migration_test.version</field>
+            <field name="type">form</field>
+            <field name="name">packaging_migration_test_version_form</field>
         </record>
 
         <record model="ir.action.act_window" id="act_record_form">
@@ -89,29 +297,36 @@ the full copyright notices and license terms. -->
             <field name="act_window" ref="act_record_form"/>
         </record>
         <record model="ir.action.act_window.domain" id="act_record_form_domain_active">
-            <field name="name">Active</field>
+            <field name="name">Approved</field>
             <field name="sequence" eval="10"/>
-            <field name="domain" eval="[('state', '=', 'active')]" pyson="1"/>
+            <field name="domain" eval="[('state', 'in', ['approved', 'conditional'])]" pyson="1"/>
             <field name="count" eval="True"/>
             <field name="act_window" ref="act_record_form"/>
         </record>
-        <record model="ir.action.act_window.domain" id="act_record_form_domain_needs_review">
-            <field name="name">Needs Review</field>
+        <record model="ir.action.act_window.domain" id="act_record_form_domain_request_update">
+            <field name="name">Request Update</field>
             <field name="sequence" eval="20"/>
-            <field name="domain" eval="[('needs_review', '=', True)]" pyson="1"/>
+            <field name="domain" eval="[('request_update', '=', True)]" pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="act_record_form"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_record_form_domain_expired">
+            <field name="name">Expired</field>
+            <field name="sequence" eval="30"/>
+            <field name="domain" eval="[('expired_documents', '=', True)]" pyson="1"/>
             <field name="count" eval="True"/>
             <field name="act_window" ref="act_record_form"/>
         </record>
         <record model="ir.action.act_window.domain" id="act_record_form_domain_obsolete">
-            <field name="name">Obsolete</field>
-            <field name="sequence" eval="30"/>
-            <field name="domain" eval="[('state', '=', 'obsolete')]" pyson="1"/>
+            <field name="name">Withdrawn</field>
+            <field name="sequence" eval="40"/>
+            <field name="domain" eval="[('state', '=', 'withdrawn')]" pyson="1"/>
             <field name="count" eval="True"/>
             <field name="act_window" ref="act_record_form"/>
         </record>
         <record model="ir.action.act_window.domain" id="act_record_form_domain_all">
             <field name="name">All</field>
-            <field name="sequence" eval="40"/>
+            <field name="sequence" eval="50"/>
             <field name="domain" eval="[]" pyson="1"/>
             <field name="act_window" ref="act_record_form"/>
         </record>
@@ -160,30 +375,94 @@ the full copyright notices and license terms. -->
             <field name="view" ref="scheme_view_form"/>
             <field name="act_window" ref="act_scheme_form"/>
         </record>
+        <record model="ir.action.act_window" id="act_compliance_template_form">
+            <field name="name">Compliance Templates</field>
+            <field name="res_model">supplier.compliance.template</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_compliance_template_form_view_tree">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="compliance_template_view_tree"/>
+            <field name="act_window" ref="act_compliance_template_form"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_compliance_template_form_view_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="compliance_template_view_form"/>
+            <field name="act_window" ref="act_compliance_template_form"/>
+        </record>
+        <record model="ir.action.act_window" id="act_food_allergen_type_form">
+            <field name="name">Food Allergen Types</field>
+            <field name="res_model">supplier.compliance.food.allergen.type</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_food_allergen_type_form_view_tree">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="food_allergen_type_view_tree"/>
+            <field name="act_window" ref="act_food_allergen_type_form"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_food_allergen_type_form_view_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="food_allergen_type_view_form"/>
+            <field name="act_window" ref="act_food_allergen_type_form"/>
+        </record>
+        <record model="ir.action.act_window" id="act_packaging_family_form">
+            <field name="name">Packaging Families</field>
+            <field name="res_model">supplier.compliance.packaging.family</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_packaging_family_form_view_tree">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="packaging_family_view_tree"/>
+            <field name="act_window" ref="act_packaging_family_form"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_packaging_family_form_view_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="packaging_family_view_form"/>
+            <field name="act_window" ref="act_packaging_family_form"/>
+        </record>
 
-        <menuitem parent="purchase.menu_purchase"
-            id="menu_supplier_compliance" sequence="60"
+        <menuitem id="menu_supplier_compliance_root" sequence="60"
+            name="Technical Sheets"/>
+        <menuitem parent="menu_supplier_compliance_root"
+            id="menu_supplier_compliance" sequence="10"
+            name="Compliance Records"
             action="act_record_form"/>
-        <menuitem parent="purchase.menu_purchase"
-            id="menu_supplier_compliance_configuration" sequence="61"
-            name="Compliance Configuration"/>
+        <menuitem parent="menu_supplier_compliance_root"
+            id="menu_supplier_compliance_configuration" sequence="20"
+            name="Configuration"/>
         <menuitem parent="menu_supplier_compliance_configuration"
             id="menu_scope_type" sequence="10"
+            name="Scope Types"
             action="act_scope_type_form"/>
         <menuitem parent="menu_supplier_compliance_configuration"
             id="menu_requirement_type" sequence="20"
+            name="Requirement Types"
             action="act_requirement_type_form"/>
         <menuitem parent="menu_supplier_compliance_configuration"
             id="menu_scheme" sequence="30"
+            name="Certification Schemes"
             action="act_scheme_form"/>
+        <menuitem parent="menu_supplier_compliance_configuration"
+            id="menu_compliance_template" sequence="35"
+            name="Compliance Templates"
+            action="act_compliance_template_form"/>
+        <menuitem parent="menu_supplier_compliance_configuration"
+            id="menu_food_allergen_type" sequence="40"
+            name="Food Allergen Types"
+            action="act_food_allergen_type_form"/>
+        <menuitem parent="menu_supplier_compliance_configuration"
+            id="menu_packaging_family" sequence="50"
+            name="Packaging Families"
+            action="act_packaging_family_form"/>
 
         <record model="ir.ui.menu-res.group" id="menu_supplier_compliance_group">
             <field name="menu" ref="menu_supplier_compliance"/>
             <field name="group" ref="group_supplier_compliance"/>
         </record>
+        <record model="ir.ui.menu-res.group" id="menu_supplier_compliance_root_group">
+            <field name="menu" ref="menu_supplier_compliance_root"/>
+            <field name="group" ref="group_supplier_compliance"/>
+        </record>
         <record model="ir.ui.menu-res.group" id="menu_supplier_compliance_configuration_group">
             <field name="menu" ref="menu_supplier_compliance_configuration"/>
-            <field name="group" ref="group_supplier_compliance"/>
+            <field name="group" ref="group_supplier_compliance_admin"/>
         </record>
 
         <record model="ir.model.access" id="access_scope_type">
@@ -195,11 +474,19 @@ the full copyright notices and license terms. -->
         </record>
         <record model="ir.model.access" id="access_scope_type_group">
             <field name="model">supplier.compliance.scope.type</field>
-            <field name="group" ref="group_supplier_compliance"/>
+            <field name="group" ref="group_supplier_compliance_admin"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="True"/>
             <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_scope_type_user_group">
+            <field name="model">supplier.compliance.scope.type</field>
+            <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
         </record>
         <record model="ir.model.access" id="access_requirement_type">
             <field name="model">supplier.compliance.requirement.type</field>
@@ -210,11 +497,19 @@ the full copyright notices and license terms. -->
         </record>
         <record model="ir.model.access" id="access_requirement_type_group">
             <field name="model">supplier.compliance.requirement.type</field>
-            <field name="group" ref="group_supplier_compliance"/>
+            <field name="group" ref="group_supplier_compliance_admin"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="True"/>
             <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_requirement_type_user_group">
+            <field name="model">supplier.compliance.requirement.type</field>
+            <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
         </record>
         <record model="ir.model.access" id="access_scheme">
             <field name="model">supplier.compliance.scheme</field>
@@ -225,7 +520,120 @@ the full copyright notices and license terms. -->
         </record>
         <record model="ir.model.access" id="access_scheme_group">
             <field name="model">supplier.compliance.scheme</field>
+            <field name="group" ref="group_supplier_compliance_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_scheme_user_group">
+            <field name="model">supplier.compliance.scheme</field>
             <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_compliance_template">
+            <field name="model">supplier.compliance.template</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_compliance_template_group">
+            <field name="model">supplier.compliance.template</field>
+            <field name="group" ref="group_supplier_compliance_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_compliance_template_requirement">
+            <field name="model">supplier.compliance.template.requirement</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_compliance_template_requirement_group">
+            <field name="model">supplier.compliance.template.requirement</field>
+            <field name="group" ref="group_supplier_compliance_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_record_state_history">
+            <field name="model">supplier.compliance.record.state.history</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_record_state_history_group">
+            <field name="model">supplier.compliance.record.state.history</field>
+            <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_compliance_template_certificate">
+            <field name="model">supplier.compliance.template.certificate</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_compliance_template_certificate_group">
+            <field name="model">supplier.compliance.template.certificate</field>
+            <field name="group" ref="group_supplier_compliance_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_compliance_template_food_analysis">
+            <field name="model">supplier.compliance.template.food.analysis</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_compliance_template_food_analysis_group">
+            <field name="model">supplier.compliance.template.food.analysis</field>
+            <field name="group" ref="group_supplier_compliance_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_compliance_template_packaging_compliance">
+            <field name="model">supplier.compliance.template.packaging.compliance</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_compliance_template_packaging_compliance_group">
+            <field name="model">supplier.compliance.template.packaging.compliance</field>
+            <field name="group" ref="group_supplier_compliance_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_compliance_template_packaging_migration_test">
+            <field name="model">supplier.compliance.template.packaging.migration_test</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_compliance_template_packaging_migration_test_group">
+            <field name="model">supplier.compliance.template.packaging.migration_test</field>
+            <field name="group" ref="group_supplier_compliance_admin"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="True"/>
@@ -261,6 +669,21 @@ the full copyright notices and license terms. -->
             <field name="perm_create" eval="True"/>
             <field name="perm_delete" eval="True"/>
         </record>
+        <record model="ir.model.access" id="access_requirement_version">
+            <field name="model">supplier.compliance.requirement.version</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_requirement_version_group">
+            <field name="model">supplier.compliance.requirement.version</field>
+            <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
         <record model="ir.model.access" id="access_certificate">
             <field name="model">supplier.compliance.certificate</field>
             <field name="perm_read" eval="False"/>
@@ -270,6 +693,247 @@ the full copyright notices and license terms. -->
         </record>
         <record model="ir.model.access" id="access_certificate_group">
             <field name="model">supplier.compliance.certificate</field>
+            <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_certificate_version">
+            <field name="model">supplier.compliance.certificate.version</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_certificate_version_group">
+            <field name="model">supplier.compliance.certificate.version</field>
+            <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_food_allergen_type">
+            <field name="model">supplier.compliance.food.allergen.type</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_food_allergen_type_group">
+            <field name="model">supplier.compliance.food.allergen.type</field>
+            <field name="group" ref="group_supplier_compliance_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_food_allergen_type_user_group">
+            <field name="model">supplier.compliance.food.allergen.type</field>
+            <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_food_health_registration">
+            <field name="model">supplier.compliance.food.health_registration</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_food_health_registration_group">
+            <field name="model">supplier.compliance.food.health_registration</field>
+            <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_food_health_registration_version">
+            <field name="model">supplier.compliance.food.health_registration.version</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_food_health_registration_version_group">
+            <field name="model">supplier.compliance.food.health_registration.version</field>
+            <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_food_allergen">
+            <field name="model">supplier.compliance.food.allergen</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_food_allergen_group">
+            <field name="model">supplier.compliance.food.allergen</field>
+            <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_food_origin">
+            <field name="model">supplier.compliance.food.origin</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_food_origin_group">
+            <field name="model">supplier.compliance.food.origin</field>
+            <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_food_origin_version">
+            <field name="model">supplier.compliance.food.origin.version</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_food_origin_version_group">
+            <field name="model">supplier.compliance.food.origin.version</field>
+            <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_food_analysis">
+            <field name="model">supplier.compliance.food.analysis</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_food_analysis_group">
+            <field name="model">supplier.compliance.food.analysis</field>
+            <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_food_analysis_version">
+            <field name="model">supplier.compliance.food.analysis.version</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_food_analysis_version_group">
+            <field name="model">supplier.compliance.food.analysis.version</field>
+            <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_packaging_family">
+            <field name="model">supplier.compliance.packaging.family</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_packaging_family_group">
+            <field name="model">supplier.compliance.packaging.family</field>
+            <field name="group" ref="group_supplier_compliance_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_packaging_family_user_group">
+            <field name="model">supplier.compliance.packaging.family</field>
+            <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_packaging_specification">
+            <field name="model">supplier.compliance.packaging.specification</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_packaging_specification_group">
+            <field name="model">supplier.compliance.packaging.specification</field>
+            <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_packaging_compliance">
+            <field name="model">supplier.compliance.packaging.compliance</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_packaging_compliance_group">
+            <field name="model">supplier.compliance.packaging.compliance</field>
+            <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_packaging_compliance_version">
+            <field name="model">supplier.compliance.packaging.compliance.version</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_packaging_compliance_version_group">
+            <field name="model">supplier.compliance.packaging.compliance.version</field>
+            <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_packaging_migration_test">
+            <field name="model">supplier.compliance.packaging.migration_test</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_packaging_migration_test_group">
+            <field name="model">supplier.compliance.packaging.migration_test</field>
+            <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_packaging_migration_test_version">
+            <field name="model">supplier.compliance.packaging.migration_test.version</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_packaging_migration_test_version_group">
+            <field name="model">supplier.compliance.packaging.migration_test.version</field>
             <field name="group" ref="group_supplier_compliance"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
@@ -287,6 +951,160 @@ the full copyright notices and license terms. -->
                 eval="[('company', 'in', Eval('companies', []))]"
                 pyson="1"/>
             <field name="rule_group" ref="rule_group_record_company"/>
+        </record>
+        <record model="ir.rule.group" id="rule_group_compliance_template_company">
+            <field name="name">User in companies</field>
+            <field name="model">supplier.compliance.template</field>
+            <field name="global_p" eval="True"/>
+        </record>
+        <record model="ir.rule" id="rule_compliance_template_company">
+            <field name="domain"
+                eval="[('company', 'in', Eval('companies', []))]"
+                pyson="1"/>
+            <field name="rule_group" ref="rule_group_compliance_template_company"/>
+        </record>
+        <record model="ir.rule.group" id="rule_group_compliance_template_requirement_company">
+            <field name="name">User in companies</field>
+            <field name="model">supplier.compliance.template.requirement</field>
+            <field name="global_p" eval="True"/>
+        </record>
+        <record model="ir.rule" id="rule_compliance_template_requirement_company">
+            <field name="domain"
+                eval="[('template.company', 'in', Eval('companies', []))]"
+                pyson="1"/>
+            <field name="rule_group" ref="rule_group_compliance_template_requirement_company"/>
+        </record>
+        <record model="ir.rule.group" id="rule_group_compliance_template_certificate_company">
+            <field name="name">User in companies</field>
+            <field name="model">supplier.compliance.template.certificate</field>
+            <field name="global_p" eval="True"/>
+        </record>
+        <record model="ir.rule" id="rule_compliance_template_certificate_company">
+            <field name="domain"
+                eval="[('template.company', 'in', Eval('companies', []))]"
+                pyson="1"/>
+            <field name="rule_group" ref="rule_group_compliance_template_certificate_company"/>
+        </record>
+        <record model="ir.rule.group" id="rule_group_compliance_template_food_analysis_company">
+            <field name="name">User in companies</field>
+            <field name="model">supplier.compliance.template.food.analysis</field>
+            <field name="global_p" eval="True"/>
+        </record>
+        <record model="ir.rule" id="rule_compliance_template_food_analysis_company">
+            <field name="domain"
+                eval="[('template.company', 'in', Eval('companies', []))]"
+                pyson="1"/>
+            <field name="rule_group" ref="rule_group_compliance_template_food_analysis_company"/>
+        </record>
+        <record model="ir.rule.group" id="rule_group_compliance_template_packaging_compliance_company">
+            <field name="name">User in companies</field>
+            <field name="model">supplier.compliance.template.packaging.compliance</field>
+            <field name="global_p" eval="True"/>
+        </record>
+        <record model="ir.rule" id="rule_compliance_template_packaging_compliance_company">
+            <field name="domain"
+                eval="[('template.company', 'in', Eval('companies', []))]"
+                pyson="1"/>
+            <field name="rule_group" ref="rule_group_compliance_template_packaging_compliance_company"/>
+        </record>
+        <record model="ir.rule.group" id="rule_group_compliance_template_packaging_migration_test_company">
+            <field name="name">User in companies</field>
+            <field name="model">supplier.compliance.template.packaging.migration_test</field>
+            <field name="global_p" eval="True"/>
+        </record>
+        <record model="ir.rule" id="rule_compliance_template_packaging_migration_test_company">
+            <field name="domain"
+                eval="[('template.company', 'in', Eval('companies', []))]"
+                pyson="1"/>
+            <field name="rule_group" ref="rule_group_compliance_template_packaging_migration_test_company"/>
+        </record>
+        <record model="ir.rule.group" id="rule_group_packaging_family_company">
+            <field name="name">User in companies</field>
+            <field name="model">supplier.compliance.packaging.family</field>
+            <field name="global_p" eval="True"/>
+        </record>
+        <record model="ir.rule" id="rule_packaging_family_company">
+            <field name="domain"
+                eval="[('company', 'in', Eval('companies', []))]"
+                pyson="1"/>
+            <field name="rule_group" ref="rule_group_packaging_family_company"/>
+        </record>
+        <record model="ir.rule.group" id="rule_group_food_health_registration_company">
+            <field name="name">User in companies</field>
+            <field name="model">supplier.compliance.food.health_registration</field>
+            <field name="global_p" eval="True"/>
+        </record>
+        <record model="ir.rule" id="rule_food_health_registration_company">
+            <field name="domain"
+                eval="[('record.company', 'in', Eval('companies', []))]"
+                pyson="1"/>
+            <field name="rule_group" ref="rule_group_food_health_registration_company"/>
+        </record>
+        <record model="ir.rule.group" id="rule_group_food_allergen_company">
+            <field name="name">User in companies</field>
+            <field name="model">supplier.compliance.food.allergen</field>
+            <field name="global_p" eval="True"/>
+        </record>
+        <record model="ir.rule" id="rule_food_allergen_company">
+            <field name="domain"
+                eval="[('record.company', 'in', Eval('companies', []))]"
+                pyson="1"/>
+            <field name="rule_group" ref="rule_group_food_allergen_company"/>
+        </record>
+        <record model="ir.rule.group" id="rule_group_food_origin_company">
+            <field name="name">User in companies</field>
+            <field name="model">supplier.compliance.food.origin</field>
+            <field name="global_p" eval="True"/>
+        </record>
+        <record model="ir.rule" id="rule_food_origin_company">
+            <field name="domain"
+                eval="[('record.company', 'in', Eval('companies', []))]"
+                pyson="1"/>
+            <field name="rule_group" ref="rule_group_food_origin_company"/>
+        </record>
+        <record model="ir.rule.group" id="rule_group_food_analysis_company">
+            <field name="name">User in companies</field>
+            <field name="model">supplier.compliance.food.analysis</field>
+            <field name="global_p" eval="True"/>
+        </record>
+        <record model="ir.rule" id="rule_food_analysis_company">
+            <field name="domain"
+                eval="[('record.company', 'in', Eval('companies', []))]"
+                pyson="1"/>
+            <field name="rule_group" ref="rule_group_food_analysis_company"/>
+        </record>
+        <record model="ir.rule.group" id="rule_group_packaging_specification_company">
+            <field name="name">User in companies</field>
+            <field name="model">supplier.compliance.packaging.specification</field>
+            <field name="global_p" eval="True"/>
+        </record>
+        <record model="ir.rule" id="rule_packaging_specification_company">
+            <field name="domain"
+                eval="[('record.company', 'in', Eval('companies', []))]"
+                pyson="1"/>
+            <field name="rule_group" ref="rule_group_packaging_specification_company"/>
+        </record>
+        <record model="ir.rule.group" id="rule_group_packaging_compliance_company">
+            <field name="name">User in companies</field>
+            <field name="model">supplier.compliance.packaging.compliance</field>
+            <field name="global_p" eval="True"/>
+        </record>
+        <record model="ir.rule" id="rule_packaging_compliance_company">
+            <field name="domain"
+                eval="[('record.company', 'in', Eval('companies', []))]"
+                pyson="1"/>
+            <field name="rule_group" ref="rule_group_packaging_compliance_company"/>
+        </record>
+        <record model="ir.rule.group" id="rule_group_packaging_migration_test_company">
+            <field name="name">User in companies</field>
+            <field name="model">supplier.compliance.packaging.migration_test</field>
+            <field name="global_p" eval="True"/>
+        </record>
+        <record model="ir.rule" id="rule_packaging_migration_test_company">
+            <field name="domain"
+                eval="[('record.company', 'in', Eval('companies', []))]"
+                pyson="1"/>
+            <field name="rule_group" ref="rule_group_packaging_migration_test_company"/>
         </record>
 
         <record model="ir.ui.view" id="party_view_form">

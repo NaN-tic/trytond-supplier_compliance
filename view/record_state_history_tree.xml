@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<tree>
+    <field name="changed_at" widget="date"/>
+    <field name="changed_at" widget="time"/>
+    <field name="from_state"/>
+    <field name="to_state"/>
+    <field name="changed_by"/>
+</tree>

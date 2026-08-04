@@ -1,0 +1,1619 @@
+#
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "model:res.group,name:group_supplier_compliance"
+msgid "Supplier Compliance"
+msgstr "Homologació de proveïdors"
+
+msgctxt "model:res.group,name:group_supplier_compliance"
+msgid "Technical Sheets User"
+msgstr "Usuari de fitxes tècniques"
+
+msgctxt "model:res.group,name:group_supplier_compliance_admin"
+msgid "Technical Sheets Administration"
+msgstr "Administrador de fitxes tècniques"
+
+msgctxt "model:ir.action,name:act_record_form"
+msgid "Compliance Records"
+msgstr "Registres d'homologació"
+
+msgctxt "model:ir.action,name:act_scope_type_form"
+msgid "Scope Types"
+msgstr "Tipus d'abast"
+
+msgctxt "model:ir.action,name:act_requirement_type_form"
+msgid "Requirement Types"
+msgstr "Tipus de requisit"
+
+msgctxt "model:ir.action,name:act_scheme_form"
+msgid "Certification Schemes"
+msgstr "Esquemes de certificació"
+
+msgctxt "model:ir.action,name:act_food_allergen_type_form"
+msgid "Food Allergen Types"
+msgstr "Tipus d'al·lèrgens alimentaris"
+
+msgctxt "model:ir.action,name:act_packaging_family_form"
+msgid "Packaging Families"
+msgstr "Famílies d'envasos"
+
+msgctxt "model:ir.ui.menu,name:menu_supplier_compliance_root"
+msgid "Technical Sheets"
+msgstr "Fitxes tècniques"
+
+msgctxt "model:ir.ui.menu,name:menu_supplier_compliance_configuration"
+msgid "Configuration"
+msgstr "Configuració"
+
+msgctxt "model:ir.ui.menu,name:menu_supplier_compliance"
+msgid "Compliance Records"
+msgstr "Registres d'homologació"
+
+msgctxt "model:ir.ui.menu,name:menu_scope_type"
+msgid "Scope Types"
+msgstr "Tipus d'abast"
+
+msgctxt "model:ir.ui.menu,name:menu_requirement_type"
+msgid "Requirement Types"
+msgstr "Tipus de requisit"
+
+msgctxt "model:ir.ui.menu,name:menu_scheme"
+msgid "Certification Schemes"
+msgstr "Esquemes de certificació"
+
+msgctxt "model:ir.ui.menu,name:menu_food_allergen_type"
+msgid "Food Allergen Types"
+msgstr "Tipus d'al·lèrgens alimentaris"
+
+msgctxt "model:ir.ui.menu,name:menu_packaging_family"
+msgid "Packaging Families"
+msgstr "Famílies d'envasos"
+
+msgctxt "model:ir.action.act_window.domain,name:act_record_form_domain_all"
+msgid "All"
+msgstr "Tots"
+
+msgctxt "model:ir.action.act_window.domain,name:act_record_form_domain_active"
+msgid "Approved"
+msgstr "Aprovats"
+
+msgctxt "model:ir.action.act_window.domain,name:act_record_form_domain_request_update"
+msgid "Request Update"
+msgstr "Demanar actualització"
+
+msgctxt "model:ir.action.act_window.domain,name:act_record_form_domain_expired"
+msgid "Expired"
+msgstr "Caducats"
+
+msgctxt "model:ir.action.act_window.domain,name:act_record_form_domain_obsolete"
+msgid "Withdrawn"
+msgstr "Retirats"
+
+msgctxt "model:supplier.compliance.scope.type,name:"
+msgid "Scope Type"
+msgstr "Tipus d'abast"
+
+msgctxt "model:supplier.compliance.requirement.type,name:"
+msgid "Requirement Type"
+msgstr "Tipus de requisit"
+
+msgctxt "model:supplier.compliance.scheme,name:"
+msgid "Certification Scheme"
+msgstr "Esquema de certificació"
+
+msgctxt "model:supplier.compliance.record,name:"
+msgid "Compliance Record"
+msgstr "Registre d'homologació"
+
+msgctxt "model:supplier.compliance.requirement,name:"
+msgid "Requirement"
+msgstr "Requisit"
+
+msgctxt "model:supplier.compliance.requirement.version,name:"
+msgid "Requirement Version"
+msgstr "Versió de requisit"
+
+msgctxt "model:supplier.compliance.certificate,name:"
+msgid "Certificate"
+msgstr "Certificat"
+
+msgctxt "model:supplier.compliance.certificate.version,name:"
+msgid "Certificate Version"
+msgstr "Versió de certificat"
+
+msgctxt "model:supplier.compliance.food.allergen.type,name:"
+msgid "Food Allergen Type"
+msgstr "Tipus d'al·lergen alimentari"
+
+msgctxt "model:supplier.compliance.food.health_registration,name:"
+msgid "Food Health Registration"
+msgstr "Registre sanitari alimentari"
+
+msgctxt "model:supplier.compliance.food.health_registration.version,name:"
+msgid "Food Health Registration Version"
+msgstr "Versió de registre sanitari alimentari"
+
+msgctxt "model:supplier.compliance.food.allergen,name:"
+msgid "Food Allergen"
+msgstr "Al·lergen alimentari"
+
+msgctxt "model:supplier.compliance.food.origin,name:"
+msgid "Food Origin"
+msgstr "Origen alimentari"
+
+msgctxt "model:supplier.compliance.food.origin.version,name:"
+msgid "Food Origin Version"
+msgstr "Versió d'origen alimentari"
+
+msgctxt "model:supplier.compliance.food.analysis,name:"
+msgid "Food Analysis"
+msgstr "Anàlisi alimentària"
+
+msgctxt "model:supplier.compliance.food.analysis.version,name:"
+msgid "Food Analysis Version"
+msgstr "Versió d'anàlisi alimentària"
+
+msgctxt "model:supplier.compliance.packaging.family,name:"
+msgid "Packaging Family"
+msgstr "Família d'envasos"
+
+msgctxt "model:supplier.compliance.packaging.specification,name:"
+msgid "Packaging Specification"
+msgstr "Especificació d'envàs"
+
+msgctxt "model:supplier.compliance.packaging.compliance,name:"
+msgid "Packaging Compliance"
+msgstr "Conformitat d'envàs"
+
+msgctxt "model:supplier.compliance.packaging.compliance.version,name:"
+msgid "Packaging Compliance Version"
+msgstr "Versió de conformitat d'envàs"
+
+msgctxt "model:supplier.compliance.packaging.migration_test,name:"
+msgid "Packaging Migration Test"
+msgstr "Assaig de migració d'envàs"
+
+msgctxt "model:supplier.compliance.packaging.migration_test.version,name:"
+msgid "Packaging Migration Test Version"
+msgstr "Versió d'assaig de migració d'envàs"
+
+msgctxt "field:supplier.compliance.scope.type,name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:supplier.compliance.scope.type,code:"
+msgid "Code"
+msgstr "Codi"
+
+msgctxt "field:supplier.compliance.scope.type,product_required:"
+msgid "Product Required"
+msgstr "Producte obligatori"
+
+msgctxt "field:supplier.compliance.scope.type,description:"
+msgid "Description"
+msgstr "Descripció"
+
+msgctxt "field:supplier.compliance.requirement.type,name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:supplier.compliance.requirement.type,code:"
+msgid "Code"
+msgstr "Codi"
+
+msgctxt "field:supplier.compliance.requirement.type,kind:"
+msgid "Kind"
+msgstr "Tipus"
+
+msgctxt "field:supplier.compliance.requirement.type,requires_document:"
+msgid "Requires Document"
+msgstr "Requereix document"
+
+msgctxt "field:supplier.compliance.requirement.type,tracks_expiry:"
+msgid "Tracks Expiry Date"
+msgstr "Controla data de caducitat"
+
+msgctxt "field:supplier.compliance.requirement.type,description:"
+msgid "Description"
+msgstr "Descripció"
+
+msgctxt "field:supplier.compliance.scheme,name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:supplier.compliance.scheme,code:"
+msgid "Code"
+msgstr "Codi"
+
+msgctxt "field:supplier.compliance.scheme,description:"
+msgid "Description"
+msgstr "Descripció"
+
+msgctxt "field:supplier.compliance.record,company:"
+msgid "Company"
+msgstr "Empresa"
+
+msgctxt "field:supplier.compliance.record,party:"
+msgid "Supplier"
+msgstr "Proveïdor"
+
+msgctxt "field:supplier.compliance.record,product_template:"
+msgid "Product"
+msgstr "Producte"
+
+msgctxt "field:supplier.compliance.record,product_supplier:"
+msgid "Supplier Product"
+msgstr "Producte del proveïdor"
+
+msgctxt "field:supplier.compliance.record,scope_type:"
+msgid "Scope Type"
+msgstr "Tipus d'abast"
+
+msgctxt "field:supplier.compliance.record,code:"
+msgid "Code"
+msgstr "Codi"
+
+msgctxt "field:supplier.compliance.record,name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:supplier.compliance.record,external_article_name:"
+msgid "External Article Name"
+msgstr "Nom d'article extern"
+
+msgctxt "field:supplier.compliance.record,state:"
+msgid "State"
+msgstr "Estat"
+
+msgctxt "field:supplier.compliance.record,start_date:"
+msgid "Start Date"
+msgstr "Data inici"
+
+msgctxt "field:supplier.compliance.record,end_date:"
+msgid "End Date"
+msgstr "Data fi"
+
+msgctxt "field:supplier.compliance.record,contact_mechanisms:"
+msgid "Contacts"
+msgstr "Contactes"
+
+msgctxt "field:supplier.compliance.record,notes:"
+msgid "Notes"
+msgstr "Notes"
+
+msgctxt "field:supplier.compliance.record,requirements:"
+msgid "Requirements"
+msgstr "Requisits"
+
+msgctxt "field:supplier.compliance.record,certificates:"
+msgid "Certificates"
+msgstr "Certificats"
+
+msgctxt "field:supplier.compliance.requirement,versions:"
+msgid "Versions"
+msgstr "Versions"
+
+msgctxt "field:supplier.compliance.requirement,current_version:"
+msgid "Current Version"
+msgstr "Versió actual"
+
+msgctxt "field:supplier.compliance.certificate,versions:"
+msgid "Versions"
+msgstr "Versions"
+
+msgctxt "field:supplier.compliance.certificate,current_version:"
+msgid "Current Version"
+msgstr "Versió actual"
+
+msgctxt "field:supplier.compliance.requirement.version,current:"
+msgid "Current"
+msgstr "Actual"
+
+msgctxt "field:supplier.compliance.certificate.version,current:"
+msgid "Current"
+msgstr "Actual"
+
+msgctxt "field:supplier.compliance.record,food_health_registrations:"
+msgid "Food Health Registrations"
+msgstr "Registres sanitaris alimentaris"
+
+msgctxt "field:supplier.compliance.record,food_allergens:"
+msgid "Food Allergens"
+msgstr "Al·lèrgens alimentaris"
+
+msgctxt "field:supplier.compliance.record,food_origins:"
+msgid "Food Origins"
+msgstr "Orígens alimentaris"
+
+msgctxt "field:supplier.compliance.food.origin,versions:"
+msgid "Versions"
+msgstr "Versions"
+
+msgctxt "field:supplier.compliance.food.origin,current_version:"
+msgid "Current Version"
+msgstr "Versió actual"
+
+msgctxt "field:supplier.compliance.food.origin.version,current:"
+msgid "Current"
+msgstr "Actual"
+
+msgctxt "field:supplier.compliance.record,food_analyses:"
+msgid "Food Analyses"
+msgstr "Anàlisis alimentàries"
+
+msgctxt "field:supplier.compliance.record,packaging_family:"
+msgid "Packaging Family"
+msgstr "Família d'envasos"
+
+msgctxt "field:supplier.compliance.record,packaging_specifications:"
+msgid "Packaging Specifications"
+msgstr "Especificacions d'envàs"
+
+msgctxt "field:supplier.compliance.record,packaging_compliances:"
+msgid "Packaging Compliances"
+msgstr "Conformitats d'envàs"
+
+msgctxt "field:supplier.compliance.food.health_registration,versions:"
+msgid "Versions"
+msgstr "Versions"
+
+msgctxt "field:supplier.compliance.food.health_registration,current_version:"
+msgid "Current Version"
+msgstr "Versió actual"
+
+msgctxt "field:supplier.compliance.packaging.compliance,versions:"
+msgid "Versions"
+msgstr "Versions"
+
+msgctxt "field:supplier.compliance.packaging.compliance,current_version:"
+msgid "Current Version"
+msgstr "Versió actual"
+
+msgctxt "field:supplier.compliance.food.health_registration.version,current:"
+msgid "Current"
+msgstr "Actual"
+
+msgctxt "field:supplier.compliance.packaging.compliance.version,current:"
+msgid "Current"
+msgstr "Actual"
+
+msgctxt "field:supplier.compliance.record,packaging_migration_tests:"
+msgid "Packaging Migration Tests"
+msgstr "Assajos de migració d'envàs"
+
+msgctxt "field:supplier.compliance.food.analysis,versions:"
+msgid "Versions"
+msgstr "Versions"
+
+msgctxt "field:supplier.compliance.food.analysis,current_version:"
+msgid "Current Version"
+msgstr "Versió actual"
+
+msgctxt "field:supplier.compliance.packaging.migration_test,versions:"
+msgid "Versions"
+msgstr "Versions"
+
+msgctxt "field:supplier.compliance.packaging.migration_test,current_version:"
+msgid "Current Version"
+msgstr "Versió actual"
+
+msgctxt "field:supplier.compliance.food.analysis.version,current:"
+msgid "Current"
+msgstr "Actual"
+
+msgctxt "field:supplier.compliance.packaging.migration_test.version,current:"
+msgid "Current"
+msgstr "Actual"
+
+msgctxt "field:supplier.compliance.record,attachments:"
+msgid "Attachments"
+msgstr "Adjunts"
+
+msgctxt "field:supplier.compliance.record,expired:"
+msgid "Expired"
+msgstr "Caducat"
+
+msgctxt "field:supplier.compliance.record,needs_review:"
+msgid "Needs Review"
+msgstr "Requereix revisió"
+
+msgctxt "field:supplier.compliance.requirement,record:"
+msgid "Record"
+msgstr "Registre"
+
+msgctxt "field:supplier.compliance.requirement,requirement_type:"
+msgid "Requirement Type"
+msgstr "Tipus de requisit"
+
+msgctxt "field:supplier.compliance.requirement,status:"
+msgid "Status"
+msgstr "Estat"
+
+msgctxt "field:supplier.compliance.requirement,document_date:"
+msgid "Document Date"
+msgstr "Data document"
+
+msgctxt "field:supplier.compliance.requirement,expiry_date:"
+msgid "Expiry Date"
+msgstr "Data caducitat"
+
+msgctxt "field:supplier.compliance.requirement,value:"
+msgid "Value"
+msgstr "Valor"
+
+msgctxt "field:supplier.compliance.requirement,notes:"
+msgid "Notes"
+msgstr "Notes"
+
+msgctxt "field:supplier.compliance.requirement,attachments:"
+msgid "Attachments"
+msgstr "Adjunts"
+
+msgctxt "field:supplier.compliance.requirement,expired:"
+msgid "Expired"
+msgstr "Caducat"
+
+msgctxt "field:supplier.compliance.certificate,record:"
+msgid "Record"
+msgstr "Registre"
+
+msgctxt "field:supplier.compliance.certificate,scheme:"
+msgid "Scheme"
+msgstr "Esquema"
+
+msgctxt "field:supplier.compliance.certificate,certificate_number:"
+msgid "Certificate Number"
+msgstr "Número de certificat"
+
+msgctxt "field:supplier.compliance.certificate,issuer:"
+msgid "Issuer"
+msgstr "Emissor"
+
+msgctxt "field:supplier.compliance.certificate,issue_date:"
+msgid "Issue Date"
+msgstr "Data emissió"
+
+msgctxt "field:supplier.compliance.certificate,expiry_date:"
+msgid "Expiry Date"
+msgstr "Data caducitat"
+
+msgctxt "field:supplier.compliance.certificate,scope_text:"
+msgid "Scope"
+msgstr "Abast"
+
+msgctxt "field:supplier.compliance.certificate,notes:"
+msgid "Notes"
+msgstr "Notes"
+
+msgctxt "field:supplier.compliance.certificate,attachments:"
+msgid "Attachments"
+msgstr "Adjunts"
+
+msgctxt "field:supplier.compliance.certificate,expired:"
+msgid "Expired"
+msgstr "Caducat"
+
+msgctxt "field:supplier.compliance.food.allergen.type,name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:supplier.compliance.food.allergen.type,code:"
+msgid "Code"
+msgstr "Codi"
+
+msgctxt "field:supplier.compliance.food.allergen.type,description:"
+msgid "Description"
+msgstr "Descripció"
+
+msgctxt "field:supplier.compliance.food.health_registration,record:"
+msgid "Record"
+msgstr "Registre"
+
+msgctxt "field:supplier.compliance.food.health_registration,registration_number:"
+msgid "Registration Number"
+msgstr "Número de registre"
+
+msgctxt "field:supplier.compliance.food.health_registration,country:"
+msgid "Country"
+msgstr "País"
+
+msgctxt "field:supplier.compliance.food.health_registration,issuing_authority:"
+msgid "Issuing Authority"
+msgstr "Autoritat emissora"
+
+msgctxt "field:supplier.compliance.food.health_registration,activity:"
+msgid "Activity"
+msgstr "Activitat"
+
+msgctxt "field:supplier.compliance.food.health_registration,start_date:"
+msgid "Start Date"
+msgstr "Data inici"
+
+msgctxt "field:supplier.compliance.food.health_registration,expiry_date:"
+msgid "Expiry Date"
+msgstr "Data caducitat"
+
+msgctxt "field:supplier.compliance.food.health_registration,state:"
+msgid "State"
+msgstr "Estat"
+
+msgctxt "field:supplier.compliance.food.health_registration,notes:"
+msgid "Notes"
+msgstr "Notes"
+
+msgctxt "field:supplier.compliance.food.health_registration,attachments:"
+msgid "Attachments"
+msgstr "Adjunts"
+
+msgctxt "field:supplier.compliance.food.health_registration,expired:"
+msgid "Expired"
+msgstr "Caducat"
+
+msgctxt "field:supplier.compliance.food.allergen,record:"
+msgid "Record"
+msgstr "Registre"
+
+msgctxt "field:supplier.compliance.food.allergen,allergen:"
+msgid "Allergen"
+msgstr "Al·lergen"
+
+msgctxt "field:supplier.compliance.food.allergen,status:"
+msgid "Status"
+msgstr "Estat"
+
+msgctxt "field:supplier.compliance.food.allergen,source:"
+msgid "Source"
+msgstr "Origen"
+
+msgctxt "field:supplier.compliance.food.allergen,declaration_date:"
+msgid "Declaration Date"
+msgstr "Data de declaració"
+
+msgctxt "field:supplier.compliance.food.allergen,notes:"
+msgid "Notes"
+msgstr "Notes"
+
+msgctxt "field:supplier.compliance.food.origin,record:"
+msgid "Record"
+msgstr "Registre"
+
+msgctxt "field:supplier.compliance.food.origin,ingredient:"
+msgid "Ingredient"
+msgstr "Ingredient"
+
+msgctxt "field:supplier.compliance.food.origin,country:"
+msgid "Country"
+msgstr "País"
+
+msgctxt "field:supplier.compliance.food.origin,country_ref:"
+msgid "Country"
+msgstr "País"
+
+msgctxt "field:supplier.compliance.food.origin,percentage:"
+msgid "Percentage"
+msgstr "Percentatge"
+
+msgctxt "field:supplier.compliance.food.origin,start_date:"
+msgid "Start Date"
+msgstr "Data inici"
+
+msgctxt "field:supplier.compliance.food.origin,end_date:"
+msgid "End Date"
+msgstr "Data fi"
+
+msgctxt "field:supplier.compliance.food.origin,document_confirmed:"
+msgid "Document Confirmed"
+msgstr "Confirmat documentalment"
+
+msgctxt "field:supplier.compliance.food.origin,notes:"
+msgid "Notes"
+msgstr "Notes"
+
+msgctxt "field:supplier.compliance.food.analysis,record:"
+msgid "Record"
+msgstr "Registre"
+
+msgctxt "field:supplier.compliance.food.analysis,analysis_type:"
+msgid "Analysis Type"
+msgstr "Tipus d'anàlisi"
+
+msgctxt "field:supplier.compliance.food.analysis,laboratory:"
+msgid "Laboratory"
+msgstr "Laboratori"
+
+msgctxt "field:supplier.compliance.food.analysis,report_number:"
+msgid "Report Number"
+msgstr "Número d'informe"
+
+msgctxt "field:supplier.compliance.food.analysis,sample_date:"
+msgid "Sample Date"
+msgstr "Data de mostra"
+
+msgctxt "field:supplier.compliance.food.analysis,report_date:"
+msgid "Report Date"
+msgstr "Data d'informe"
+
+msgctxt "field:supplier.compliance.food.analysis,result:"
+msgid "Result"
+msgstr "Resultat"
+
+msgctxt "field:supplier.compliance.food.analysis,conform:"
+msgid "Conform"
+msgstr "Conforme"
+
+msgctxt "field:supplier.compliance.food.analysis,next_analysis_date:"
+msgid "Next Analysis Date"
+msgstr "Pròxima data d'anàlisi"
+
+msgctxt "field:supplier.compliance.food.analysis,notes:"
+msgid "Notes"
+msgstr "Notes"
+
+msgctxt "field:supplier.compliance.food.analysis,attachments:"
+msgid "Attachments"
+msgstr "Adjunts"
+
+msgctxt "field:supplier.compliance.food.analysis,due:"
+msgid "Due"
+msgstr "Vençut"
+
+msgctxt "field:supplier.compliance.packaging.family,company:"
+msgid "Company"
+msgstr "Empresa"
+
+msgctxt "field:supplier.compliance.packaging.family,party:"
+msgid "Supplier"
+msgstr "Proveïdor"
+
+msgctxt "field:supplier.compliance.packaging.family,name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:supplier.compliance.packaging.family,code:"
+msgid "Code"
+msgstr "Codi"
+
+msgctxt "field:supplier.compliance.packaging.family,material:"
+msgid "Material"
+msgstr "Material"
+
+msgctxt "field:supplier.compliance.packaging.family,notes:"
+msgid "Notes"
+msgstr "Notes"
+
+msgctxt "field:supplier.compliance.packaging.family,records:"
+msgid "Records"
+msgstr "Registres"
+
+msgctxt "field:supplier.compliance.packaging.specification,record:"
+msgid "Record"
+msgstr "Registre"
+
+msgctxt "field:supplier.compliance.packaging.specification,kind:"
+msgid "Packaging Type"
+msgstr "Tipus d'envàs"
+
+msgctxt "field:supplier.compliance.packaging.specification,primary_material:"
+msgid "Primary Material"
+msgstr "Material principal"
+
+msgctxt "field:supplier.compliance.packaging.specification,additional_materials:"
+msgid "Additional Materials"
+msgstr "Materials addicionals"
+
+msgctxt "field:supplier.compliance.packaging.specification,food_contact:"
+msgid "Food Contact"
+msgstr "Contacte alimentari"
+
+msgctxt "field:supplier.compliance.packaging.specification,contact_type:"
+msgid "Contact Type"
+msgstr "Tipus de contacte"
+
+msgctxt "field:supplier.compliance.packaging.specification,authorized_foods:"
+msgid "Authorized Foods"
+msgstr "Aliments autoritzats"
+
+msgctxt "field:supplier.compliance.packaging.specification,use_conditions:"
+msgid "Use Conditions"
+msgstr "Condicions d'ús"
+
+msgctxt "field:supplier.compliance.packaging.specification,recycled:"
+msgid "Recycled"
+msgstr "Reciclat"
+
+msgctxt "field:supplier.compliance.packaging.specification,recycled_percentage:"
+msgid "Recycled Percentage"
+msgstr "Percentatge reciclat"
+
+msgctxt "field:supplier.compliance.packaging.specification,dimensions:"
+msgid "Dimensions"
+msgstr "Dimensions"
+
+msgctxt "field:supplier.compliance.packaging.specification,grammage:"
+msgid "Grammage"
+msgstr "Gramatge"
+
+msgctxt "field:supplier.compliance.packaging.specification,notes:"
+msgid "Notes"
+msgstr "Notes"
+
+msgctxt "field:supplier.compliance.packaging.compliance,record:"
+msgid "Record"
+msgstr "Registre"
+
+msgctxt "field:supplier.compliance.packaging.compliance,reference:"
+msgid "Reference"
+msgstr "Referència"
+
+msgctxt "field:supplier.compliance.packaging.compliance,issue_date:"
+msgid "Issue Date"
+msgstr "Data emissió"
+
+msgctxt "field:supplier.compliance.packaging.compliance,review_date:"
+msgid "Review Date"
+msgstr "Data revisió"
+
+msgctxt "field:supplier.compliance.packaging.compliance,expiry_date:"
+msgid "Expiry Date"
+msgstr "Data caducitat"
+
+msgctxt "field:supplier.compliance.packaging.compliance,covered_materials:"
+msgid "Covered Materials"
+msgstr "Materials coberts"
+
+msgctxt "field:supplier.compliance.packaging.compliance,authorized_foods:"
+msgid "Authorized Foods"
+msgstr "Aliments autoritzats"
+
+msgctxt "field:supplier.compliance.packaging.compliance,restrictions:"
+msgid "Restrictions"
+msgstr "Restriccions"
+
+msgctxt "field:supplier.compliance.packaging.compliance,declared_regulation:"
+msgid "Declared Regulation"
+msgstr "Normativa declarada"
+
+msgctxt "field:supplier.compliance.packaging.compliance,status:"
+msgid "Status"
+msgstr "Estat"
+
+msgctxt "field:supplier.compliance.packaging.compliance,notes:"
+msgid "Notes"
+msgstr "Notes"
+
+msgctxt "field:supplier.compliance.packaging.compliance,attachments:"
+msgid "Attachments"
+msgstr "Adjunts"
+
+msgctxt "field:supplier.compliance.packaging.compliance,expired:"
+msgid "Expired"
+msgstr "Caducat"
+
+msgctxt "field:supplier.compliance.packaging.migration_test,record:"
+msgid "Record"
+msgstr "Registre"
+
+msgctxt "field:supplier.compliance.packaging.migration_test,laboratory:"
+msgid "Laboratory"
+msgstr "Laboratori"
+
+msgctxt "field:supplier.compliance.packaging.migration_test,report_number:"
+msgid "Report Number"
+msgstr "Número d'informe"
+
+msgctxt "field:supplier.compliance.packaging.migration_test,test_date:"
+msgid "Test Date"
+msgstr "Data de l'assaig"
+
+msgctxt "field:supplier.compliance.packaging.migration_test,migration_type:"
+msgid "Migration Type"
+msgstr "Tipus de migració"
+
+msgctxt "field:supplier.compliance.packaging.migration_test,food_simulant:"
+msgid "Food Simulant"
+msgstr "Simulant alimentari"
+
+msgctxt "field:supplier.compliance.packaging.migration_test,duration:"
+msgid "Duration"
+msgstr "Durada"
+
+msgctxt "field:supplier.compliance.packaging.migration_test,temperature:"
+msgid "Temperature"
+msgstr "Temperatura"
+
+msgctxt "field:supplier.compliance.packaging.migration_test,result:"
+msgid "Result"
+msgstr "Resultat"
+
+msgctxt "field:supplier.compliance.packaging.migration_test,limit_value:"
+msgid "Limit Value"
+msgstr "Valor límit"
+
+msgctxt "field:supplier.compliance.packaging.migration_test,conform:"
+msgid "Conform"
+msgstr "Conforme"
+
+msgctxt "field:supplier.compliance.packaging.migration_test,next_review_date:"
+msgid "Next Review Date"
+msgstr "Pròxima data de revisió"
+
+msgctxt "field:supplier.compliance.packaging.migration_test,notes:"
+msgid "Notes"
+msgstr "Notes"
+
+msgctxt "field:supplier.compliance.packaging.migration_test,attachments:"
+msgid "Attachments"
+msgstr "Adjunts"
+
+msgctxt "field:party.contact_mechanism,supplier_compliance_alert:"
+msgid "Compliance Alert"
+msgstr "Alerta d'homologació"
+
+msgctxt "field:party.contact_mechanism,supplier_compliance_crisis:"
+msgid "Compliance Crisis"
+msgstr "Crisi d'homologació"
+
+msgctxt "field:party.party,compliance_records:"
+msgid "Compliance Records"
+msgstr "Registres d'homologació"
+
+msgctxt "field:product.template,compliance_records:"
+msgid "Compliance Records"
+msgstr "Registres d'homologació"
+
+msgctxt "field:purchase.product_supplier,compliance_records:"
+msgid "Compliance Records"
+msgstr "Registres d'homologació"
+
+msgctxt "selection:supplier.compliance.requirement.type,kind:"
+msgid "Document"
+msgstr "Document"
+
+msgctxt "selection:supplier.compliance.requirement.type,kind:"
+msgid "Declaration"
+msgstr "Declaració"
+
+msgctxt "selection:supplier.compliance.requirement.type,kind:"
+msgid "Analysis"
+msgstr "Anàlisi"
+
+msgctxt "selection:supplier.compliance.requirement.type,kind:"
+msgid "Certificate"
+msgstr "Certificat"
+
+msgctxt "selection:supplier.compliance.requirement.type,kind:"
+msgid "Other"
+msgstr "Un altre"
+
+msgctxt "selection:supplier.compliance.record,state:"
+msgid "Draft"
+msgstr "Esborrany"
+
+msgctxt "selection:supplier.compliance.record,state:"
+msgid "Active"
+msgstr "Actiu"
+
+msgctxt "selection:supplier.compliance.record,state:"
+msgid "Obsolete"
+msgstr "Obsolet"
+
+msgctxt "selection:supplier.compliance.requirement,status:"
+msgid "Missing"
+msgstr "Falta"
+
+msgctxt "selection:supplier.compliance.requirement,status:"
+msgid "Pending"
+msgstr "Pendent"
+
+msgctxt "selection:supplier.compliance.requirement,status:"
+msgid "Valid"
+msgstr "Vigent"
+
+msgctxt "selection:supplier.compliance.requirement,status:"
+msgid "Expired"
+msgstr "Caducat"
+
+msgctxt "selection:supplier.compliance.requirement,status:"
+msgid "Not Applicable"
+msgstr "No aplica"
+
+msgctxt "selection:supplier.compliance.food.health_registration,state:"
+msgid "Draft"
+msgstr "Esborrany"
+
+msgctxt "selection:supplier.compliance.food.health_registration,state:"
+msgid "Valid"
+msgstr "Vigent"
+
+msgctxt "selection:supplier.compliance.food.health_registration,state:"
+msgid "Expired"
+msgstr "Caducat"
+
+msgctxt "selection:supplier.compliance.food.health_registration,state:"
+msgid "Obsolete"
+msgstr "Obsolet"
+
+msgctxt "selection:supplier.compliance.food.allergen,status:"
+msgid "Contains"
+msgstr "Conté"
+
+msgctxt "selection:supplier.compliance.food.allergen,status:"
+msgid "May Contain"
+msgstr "Pot contenir"
+
+msgctxt "selection:supplier.compliance.food.allergen,status:"
+msgid "Cross Contamination"
+msgstr "Contaminació creuada"
+
+msgctxt "selection:supplier.compliance.food.allergen,status:"
+msgid "Absent"
+msgstr "Absent"
+
+msgctxt "selection:supplier.compliance.food.allergen,status:"
+msgid "Unknown"
+msgstr "Desconegut"
+
+msgctxt "selection:supplier.compliance.packaging.specification,kind:"
+msgid "Bag"
+msgstr "Bossa"
+
+msgctxt "selection:supplier.compliance.packaging.specification,kind:"
+msgid "Box"
+msgstr "Caixa"
+
+msgctxt "selection:supplier.compliance.packaging.specification,kind:"
+msgid "Film"
+msgstr "Film"
+
+msgctxt "selection:supplier.compliance.packaging.specification,kind:"
+msgid "Tray"
+msgstr "Safata"
+
+msgctxt "selection:supplier.compliance.packaging.specification,kind:"
+msgid "Other"
+msgstr "Un altre"
+
+msgctxt "selection:supplier.compliance.packaging.specification,contact_type:"
+msgid "Direct"
+msgstr "Directe"
+
+msgctxt "selection:supplier.compliance.packaging.specification,contact_type:"
+msgid "Indirect"
+msgstr "Indirecte"
+
+msgctxt "selection:supplier.compliance.packaging.specification,contact_type:"
+msgid "No Contact"
+msgstr "Sense contacte"
+
+msgctxt "selection:supplier.compliance.packaging.compliance,status:"
+msgid "Pending"
+msgstr "Pendent"
+
+msgctxt "selection:supplier.compliance.packaging.compliance,status:"
+msgid "Valid"
+msgstr "Vigent"
+
+msgctxt "selection:supplier.compliance.packaging.compliance,status:"
+msgid "Expired"
+msgstr "Caducat"
+
+msgctxt "selection:supplier.compliance.packaging.compliance,status:"
+msgid "Rejected"
+msgstr "Rebutjat"
+
+msgctxt "selection:supplier.compliance.packaging.compliance,status:"
+msgid "Superseded"
+msgstr "Substituït"
+
+msgctxt "selection:supplier.compliance.packaging.migration_test,migration_type:"
+msgid "Global Migration"
+msgstr "Migració global"
+
+msgctxt "selection:supplier.compliance.packaging.migration_test,migration_type:"
+msgid "Specific Migration"
+msgstr "Migració específica"
+
+msgctxt "selection:supplier.compliance.packaging.migration_test,migration_type:"
+msgid "Heavy Metals"
+msgstr "Metalls pesants"
+
+msgctxt "selection:supplier.compliance.packaging.migration_test,migration_type:"
+msgid "Printing Inks"
+msgstr "Tintes d'impressió"
+
+msgctxt "selection:supplier.compliance.packaging.migration_test,migration_type:"
+msgid "Other"
+msgstr "Un altre"
+
+msgctxt "view:supplier.compliance.record:"
+msgid "General"
+msgstr "General"
+
+msgctxt "view:supplier.compliance.record:"
+msgid "Contacts"
+msgstr "Contactes"
+
+msgctxt "view:supplier.compliance.record:"
+msgid "Requirements"
+msgstr "Requisits"
+
+msgctxt "view:supplier.compliance.record:"
+msgid "Certificates"
+msgstr "Certificats"
+
+msgctxt "view:supplier.compliance.record:"
+msgid "Food"
+msgstr "Alimentació"
+
+msgctxt "view:supplier.compliance.record:"
+msgid "Packaging"
+msgstr "Envasos"
+
+msgctxt "view:supplier.compliance.record:"
+msgid "Attachments"
+msgstr "Adjunts"
+
+msgctxt "view:supplier.compliance.record:"
+msgid "Registrations"
+msgstr "Registres"
+
+msgctxt "view:supplier.compliance.record:"
+msgid "Allergens"
+msgstr "Al·lèrgens"
+
+msgctxt "view:supplier.compliance.record:"
+msgid "Origins"
+msgstr "Orígens"
+
+msgctxt "view:supplier.compliance.record:"
+msgid "Analyses"
+msgstr "Anàlisis"
+
+msgctxt "view:supplier.compliance.record:"
+msgid "Specifications"
+msgstr "Especificacions"
+
+msgctxt "view:supplier.compliance.record:"
+msgid "Compliances"
+msgstr "Conformitats"
+
+msgctxt "view:supplier.compliance.record:"
+msgid "Migration Tests"
+msgstr "Assajos de migració"
+
+msgctxt "view:supplier.compliance.record:"
+msgid "Notes"
+msgstr "Notes"
+
+msgctxt "view:supplier.compliance.certificate:"
+msgid "New Version"
+msgstr "Nova versió"
+
+msgctxt "view:supplier.compliance.certificate:"
+msgid "Versions"
+msgstr "Versions"
+
+msgctxt "view:supplier.compliance.certificate:"
+msgid "Scope"
+msgstr "Abast"
+
+msgctxt "view:supplier.compliance.requirement:"
+msgid "New Version"
+msgstr "Nova versió"
+
+msgctxt "view:supplier.compliance.requirement:"
+msgid "Versions"
+msgstr "Versions"
+
+msgctxt "view:supplier.compliance.food.health_registration:"
+msgid "New Version"
+msgstr "Nova versió"
+
+msgctxt "view:supplier.compliance.food.health_registration:"
+msgid "Versions"
+msgstr "Versions"
+
+msgctxt "view:supplier.compliance.food.origin:"
+msgid "New Version"
+msgstr "Nova versió"
+
+msgctxt "view:supplier.compliance.food.origin:"
+msgid "Versions"
+msgstr "Versions"
+
+msgctxt "view:supplier.compliance.packaging.compliance:"
+msgid "New Version"
+msgstr "Nova versió"
+
+msgctxt "view:supplier.compliance.packaging.compliance:"
+msgid "Versions"
+msgstr "Versions"
+
+msgctxt "view:supplier.compliance.food.analysis:"
+msgid "New Version"
+msgstr "Nova versió"
+
+msgctxt "view:supplier.compliance.food.analysis:"
+msgid "Versions"
+msgstr "Versions"
+
+msgctxt "view:supplier.compliance.packaging.migration_test:"
+msgid "New Version"
+msgstr "Nova versió"
+
+msgctxt "view:supplier.compliance.packaging.migration_test:"
+msgid "Versions"
+msgstr "Versions"
+
+msgctxt "view:supplier.compliance.packaging.specification:"
+msgid "Additional Materials"
+msgstr "Materials addicionals"
+
+msgctxt "view:supplier.compliance.packaging.specification:"
+msgid "Use Conditions"
+msgstr "Condicions d'ús"
+
+msgctxt "view:supplier.compliance.packaging.compliance:"
+msgid "Covered Materials"
+msgstr "Materials coberts"
+
+msgctxt "view:supplier.compliance.packaging.compliance:"
+msgid "Restrictions"
+msgstr "Restriccions"
+
+msgctxt "model:ir.message,text:msg_scope_requires_product"
+msgid "The scope \"%(scope)s\" requires a product on compliance record \"%(record)s\"."
+msgstr "L'abast \"%(scope)s\" requereix un producte al registre d'homologació \"%(record)s\"."
+
+msgctxt "model:ir.message,text:msg_record_invalid_dates"
+msgid "The end date must not be before the start date on compliance record \"%(record)s\"."
+msgstr "La data de fi no pot ser anterior a la data d'inici al registre d'homologació \"%(record)s\"."
+
+msgctxt "model:ir.message,text:msg_requirement_invalid_dates"
+msgid "The requirement \"%(requirement)s\" has an expiry date earlier than its document date."
+msgstr "El requisit \"%(requirement)s\" té una data de caducitat anterior a la data del document."
+
+msgctxt "model:ir.message,text:msg_requirement_duplicate"
+msgid "The requirement \"%(requirement)s\" already exists on this compliance record."
+msgstr "El requisit \"%(requirement)s\" ja existeix en aquest registre d'homologació."
+
+msgctxt "model:ir.message,text:msg_certificate_invalid_dates"
+msgid "The certificate \"%(certificate)s\" has an expiry date earlier than its issue date."
+msgstr "El certificat \"%(certificate)s\" té una data de caducitat anterior a la data d'emissió."
+
+msgctxt "model:ir.message,text:msg_certificate_duplicate"
+msgid "The certificate \"%(certificate)s\" already exists on this compliance record."
+msgstr "El certificat \"%(certificate)s\" ja existeix en aquest registre d'homologació."
+
+msgctxt "model:ir.message,text:msg_product_supplier_mismatch"
+msgid "The supplier product does not match the supplier and product selected on compliance record \"%(record)s\"."
+msgstr "El producte del proveïdor no coincideix amb el proveïdor i el producte seleccionats al registre d'homologació \"%(record)s\"."
+
+msgctxt "model:ir.message,text:msg_food_health_registration_invalid_dates"
+msgid "The food health registration \"%(registration)s\" has an expiry date earlier than its start date."
+msgstr "El registre sanitari alimentari \"%(registration)s\" té una data de caducitat anterior a la data d'inici."
+
+msgctxt "model:ir.message,text:msg_food_health_registration_duplicate"
+msgid "The food health registration \"%(registration)s\" already exists on this compliance record."
+msgstr "El registre sanitari alimentari \"%(registration)s\" ja existeix en aquest registre d'homologació."
+
+msgctxt "model:ir.message,text:msg_food_origin_invalid_dates"
+msgid "The food origin \"%(origin)s\" has an end date earlier than its start date."
+msgstr "L'origen alimentari \"%(origin)s\" té una data de fi anterior a la data d'inici."
+
+msgctxt "model:ir.message,text:msg_food_origin_missing_country"
+msgid "The food origin \"%(origin)s\" must have a country."
+msgstr "L'origen alimentari \"%(origin)s\" ha de tenir un país."
+
+msgctxt "model:ir.message,text:msg_food_origin_duplicate"
+msgid "The food origin \"%(origin)s\" already exists on this compliance record."
+msgstr "L'origen alimentari \"%(origin)s\" ja existeix en aquest registre d'homologació."
+
+msgctxt "model:ir.message,text:msg_food_analysis_invalid_dates"
+msgid "The food analysis \"%(analysis)s\" has a report date earlier than its sample date."
+msgstr "L'anàlisi alimentària \"%(analysis)s\" té una data d'informe anterior a la data de mostra."
+
+msgctxt "model:ir.message,text:msg_food_analysis_duplicate"
+msgid "The food analysis \"%(analysis)s\" already exists on this compliance record."
+msgstr "L'anàlisi alimentària \"%(analysis)s\" ja existeix en aquest registre d'homologació."
+
+msgctxt "model:ir.message,text:msg_packaging_compliance_invalid_dates"
+msgid "The packaging compliance \"%(compliance)s\" has an expiry date earlier than its issue date."
+msgstr "La conformitat d'envàs \"%(compliance)s\" té una data de caducitat anterior a la data d'emissió."
+
+msgctxt "field:supplier.compliance.food.health_registration,expiry_notice_days:"
+msgid "Expiry Notice Days"
+msgstr "Dies d'avís de caducitat"
+
+msgctxt "field:supplier.compliance.food.health_registration,request_update:"
+msgid "Request Update"
+msgstr "Demanar actualització"
+
+msgctxt "field:supplier.compliance.food.health_registration.version,request_update:"
+msgid "Request Update"
+msgstr "Demanar actualització"
+
+msgctxt "field:supplier.compliance.food.analysis,review_notice_days:"
+msgid "Review Notice Days"
+msgstr "Dies d'avís per a revisió"
+
+msgctxt "field:supplier.compliance.food.analysis,request_update:"
+msgid "Request Update"
+msgstr "Demanar actualització"
+
+msgctxt "field:supplier.compliance.food.analysis.version,request_update:"
+msgid "Request Update"
+msgstr "Demanar actualització"
+
+msgctxt "field:supplier.compliance.packaging.compliance,expiry_notice_days:"
+msgid "Expiry Notice Days"
+msgstr "Dies d'avís de caducitat"
+
+msgctxt "field:supplier.compliance.packaging.compliance,request_update:"
+msgid "Request Update"
+msgstr "Demanar actualització"
+
+msgctxt "field:supplier.compliance.packaging.compliance.version,request_update:"
+msgid "Request Update"
+msgstr "Demanar actualització"
+
+msgctxt "field:supplier.compliance.packaging.migration_test,review_notice_days:"
+msgid "Review Notice Days"
+msgstr "Dies d'avís per a revisió"
+
+msgctxt "field:supplier.compliance.packaging.migration_test,request_update:"
+msgid "Request Update"
+msgstr "Demanar actualització"
+
+msgctxt "field:supplier.compliance.packaging.migration_test.version,request_update:"
+msgid "Request Update"
+msgstr "Demanar actualització"
+
+msgctxt "model:ir.message,text:msg_packaging_compliance_duplicate"
+msgid "The packaging compliance \"%(compliance)s\" already exists on this compliance record."
+msgstr "La conformitat d'envàs \"%(compliance)s\" ja existeix en aquest registre d'homologació."
+
+msgctxt "model:ir.message,text:msg_packaging_migration_test_duplicate"
+msgid "The packaging migration test \"%(test)s\" already exists on this compliance record."
+msgstr "L'assaig de migració d'envàs \"%(test)s\" ja existeix en aquest registre d'homologació."
+
+msgctxt "field:supplier.compliance.template,company:"
+msgid "Company"
+msgstr "Empresa"
+
+msgctxt "field:supplier.compliance.template,name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:supplier.compliance.template,scope_type:"
+msgid "Scope Type"
+msgstr "Tipus d'abast"
+
+msgctxt "field:supplier.compliance.template,product_category:"
+msgid "Product Category"
+msgstr "Categoria de producte"
+
+msgctxt "field:supplier.compliance.template,requirements:"
+msgid "Requirements"
+msgstr "Requisits"
+
+msgctxt "field:supplier.compliance.template,certificates:"
+msgid "Certificates"
+msgstr "Certificats"
+
+msgctxt "field:supplier.compliance.template,food_analyses:"
+msgid "Food Analyses"
+msgstr "Anàlisis alimentàries"
+
+msgctxt "field:supplier.compliance.template,packaging_compliances:"
+msgid "Packaging Compliances"
+msgstr "Conformitats d'envàs"
+
+msgctxt "field:supplier.compliance.template,packaging_migration_tests:"
+msgid "Packaging Migration Tests"
+msgstr "Assajos de migració d'envàs"
+
+msgctxt "field:supplier.compliance.template,notes:"
+msgid "Notes"
+msgstr "Notes"
+
+msgctxt "field:supplier.compliance.template.requirement,template:"
+msgid "Template"
+msgstr "Plantilla"
+
+msgctxt "field:supplier.compliance.template.requirement,requirement_type:"
+msgid "Requirement Type"
+msgstr "Tipus de requisit"
+
+msgctxt "field:supplier.compliance.template.certificate,template:"
+msgid "Template"
+msgstr "Plantilla"
+
+msgctxt "field:supplier.compliance.template.certificate,scheme:"
+msgid "Scheme"
+msgstr "Esquema"
+
+msgctxt "field:supplier.compliance.template.food.analysis,template:"
+msgid "Template"
+msgstr "Plantilla"
+
+msgctxt "field:supplier.compliance.template.food.analysis,analysis_type:"
+msgid "Analysis Type"
+msgstr "Tipus d'anàlisi"
+
+msgctxt "field:supplier.compliance.template.food.analysis,review_notice_days:"
+msgid "Review Notice Days"
+msgstr "Dies d'avís per a revisió"
+
+msgctxt "field:supplier.compliance.template.packaging.compliance,template:"
+msgid "Template"
+msgstr "Plantilla"
+
+msgctxt "field:supplier.compliance.template.packaging.compliance,reference:"
+msgid "Reference"
+msgstr "Referència"
+
+msgctxt "field:supplier.compliance.template.packaging.compliance,declared_regulation:"
+msgid "Declared Regulation"
+msgstr "Normativa declarada"
+
+msgctxt "field:supplier.compliance.template.packaging.compliance,expiry_notice_days:"
+msgid "Expiry Notice Days"
+msgstr "Dies d'avís de caducitat"
+
+msgctxt "field:supplier.compliance.template.packaging.migration_test,template:"
+msgid "Template"
+msgstr "Plantilla"
+
+msgctxt "field:supplier.compliance.template.packaging.migration_test,migration_type:"
+msgid "Migration Type"
+msgstr "Tipus de migració"
+
+msgctxt "field:supplier.compliance.template.packaging.migration_test,review_notice_days:"
+msgid "Review Notice Days"
+msgstr "Dies d'avís per a revisió"
+
+msgctxt "model:ir.action,name:act_compliance_template_form"
+msgid "Compliance Templates"
+msgstr "Plantilles d'homologació"
+
+msgctxt "model:ir.ui.menu,name:menu_compliance_template"
+msgid "Compliance Templates"
+msgstr "Plantilles d'homologació"
+
+msgctxt "model:ir.message,text:msg_compliance_template_duplicate"
+msgid "The compliance template \"%(template)s\" already exists for this company, scope type and product category."
+msgstr "La plantilla d'homologació \"%(template)s\" ja existeix per a aquesta empresa, tipus d'abast i categoria de producte."
+
+msgctxt "model:ir.message,text:msg_compliance_template_requirement_duplicate"
+msgid "The requirement type \"%(requirement_type)s\" is repeated on compliance template \"%(template)s\"."
+msgstr "El tipus de requisit \"%(requirement_type)s\" està repetit a la plantilla d'homologació \"%(template)s\"."
+
+msgctxt "model:ir.message,text:msg_compliance_template_certificate_duplicate"
+msgid "The certification scheme \"%(scheme)s\" is repeated on compliance template \"%(template)s\"."
+msgstr "L'esquema de certificació \"%(scheme)s\" està repetit a la plantilla d'homologació \"%(template)s\"."
+
+msgctxt "model:ir.message,text:msg_compliance_template_food_analysis_duplicate"
+msgid "The analysis type \"%(analysis_type)s\" is repeated on compliance template \"%(template)s\"."
+msgstr "El tipus d'anàlisi \"%(analysis_type)s\" està repetit a la plantilla d'homologació \"%(template)s\"."
+
+msgctxt "model:ir.message,text:msg_compliance_template_packaging_migration_test_duplicate"
+msgid "The migration test type \"%(migration_type)s\" is repeated on compliance template \"%(template)s\"."
+msgstr "El tipus d'assaig de migració \"%(migration_type)s\" està repetit a la plantilla d'homologació \"%(template)s\"."
+
+msgctxt "view:supplier.compliance.template:"
+msgid "Requirements"
+msgstr "Requisits"
+
+msgctxt "view:supplier.compliance.template:"
+msgid "Certificates"
+msgstr "Certificats"
+
+msgctxt "view:supplier.compliance.template:"
+msgid "Food Analyses"
+msgstr "Anàlisis alimentàries"
+
+msgctxt "view:supplier.compliance.template:"
+msgid "Packaging Compliances"
+msgstr "Conformitats d'envàs"
+
+msgctxt "view:supplier.compliance.template:"
+msgid "Packaging Migration Tests"
+msgstr "Assajos de migració d'envàs"
+
+msgctxt "view:supplier.compliance.record:"
+msgid "Compliance"
+msgstr "Homologació"
+
+msgctxt "view:supplier.compliance.record:"
+msgid "Create Template"
+msgstr "Crear plantilla"
+
+msgctxt "field:supplier.compliance.record,withdrawal_date:"
+msgid "Withdrawal Date"
+msgstr "Data de baixa"
+
+msgctxt "field:supplier.compliance.record,withdrawal_reason:"
+msgid "Withdrawal Reason"
+msgstr "Motiu de baixa"
+
+msgctxt "field:supplier.compliance.record,replacement_record:"
+msgid "Replacement Article"
+msgstr "Article substitut"
+
+msgctxt "field:supplier.compliance.record,authorized_by:"
+msgid "Authorized By"
+msgstr "Autoritzat per"
+
+msgctxt "field:supplier.compliance.record,purchase_blocked:"
+msgid "Purchase Blocked"
+msgstr "Bloquejat per a compra"
+
+msgctxt "field:supplier.compliance.record,affected_open_purchases:"
+msgid "Affected Open Purchases"
+msgstr "Compres obertes afectades"
+
+msgctxt "field:supplier.compliance.record,existing_stock:"
+msgid "Existing Stock"
+msgstr "Estoc existent"
+
+msgctxt "field:supplier.compliance.record,draft_purchases:"
+msgid "Draft Purchases"
+msgstr "Compres en esborrany"
+
+msgctxt "field:supplier.compliance.record,pending_receipt_purchases:"
+msgid "Pending Receipt Purchases"
+msgstr "Compres pendents de rebre"
+
+msgctxt "field:supplier.compliance.record,past_purchases:"
+msgid "Past Purchases"
+msgstr "Compres anteriors"
+
+msgctxt "field:purchase.configuration,supplier_compliance_purchase_mode:"
+msgid "Supplier Compliance Purchase Mode"
+msgstr "Mode d'homologació en compres"
+
+msgctxt "field:purchase.configuration.supplier_compliance,supplier_compliance_purchase_mode:"
+msgid "Supplier Compliance Purchase Mode"
+msgstr "Mode d'homologació en compres"
+
+msgctxt "selection:purchase.configuration,supplier_compliance_purchase_mode:"
+msgid "None"
+msgstr "Cap"
+
+msgctxt "selection:purchase.configuration,supplier_compliance_purchase_mode:"
+msgid "Warning"
+msgstr "Avís"
+
+msgctxt "selection:purchase.configuration,supplier_compliance_purchase_mode:"
+msgid "Blocking"
+msgstr "Bloqueig"
+
+msgctxt "selection:purchase.configuration.supplier_compliance,supplier_compliance_purchase_mode:"
+msgid "None"
+msgstr "Cap"
+
+msgctxt "selection:purchase.configuration.supplier_compliance,supplier_compliance_purchase_mode:"
+msgid "Warning"
+msgstr "Avís"
+
+msgctxt "selection:purchase.configuration.supplier_compliance,supplier_compliance_purchase_mode:"
+msgid "Blocking"
+msgstr "Bloqueig"
+
+msgctxt "selection:supplier.compliance.record,state:"
+msgid "Pending Documents"
+msgstr "Pendent de documentació"
+
+msgctxt "selection:supplier.compliance.record,state:"
+msgid "Approved"
+msgstr "Aprovat"
+
+msgctxt "selection:supplier.compliance.record,state:"
+msgid "Conditional"
+msgstr "Condicional"
+
+msgctxt "selection:supplier.compliance.record,state:"
+msgid "Suspended"
+msgstr "Suspès"
+
+msgctxt "selection:supplier.compliance.record,state:"
+msgid "Expired"
+msgstr "Caducat"
+
+msgctxt "selection:supplier.compliance.record,state:"
+msgid "Withdrawn"
+msgstr "Retirat"
+
+msgctxt "selection:supplier.compliance.record,state:"
+msgid "Rejected"
+msgstr "Rebutjat"
+
+msgctxt "view:supplier.compliance.record:"
+msgid "Withdrawal"
+msgstr "Baixa"
+
+msgctxt "view:supplier.compliance.record:"
+msgid "State History"
+msgstr "Històric d'estats"
+
+msgctxt "view:supplier.compliance.record:"
+msgid "Draft"
+msgstr "Esborrany"
+
+msgctxt "view:supplier.compliance.record:"
+msgid "Pending Documents"
+msgstr "Pendent de documentació"
+
+msgctxt "view:supplier.compliance.record:"
+msgid "Approved"
+msgstr "Aprovat"
+
+msgctxt "view:supplier.compliance.record:"
+msgid "Conditional"
+msgstr "Condicional"
+
+msgctxt "view:supplier.compliance.record:"
+msgid "Suspended"
+msgstr "Suspès"
+
+msgctxt "view:supplier.compliance.record:"
+msgid "Expired"
+msgstr "Caducat"
+
+msgctxt "view:supplier.compliance.record:"
+msgid "Withdrawn"
+msgstr "Retirat"
+
+msgctxt "view:supplier.compliance.record:"
+msgid "Rejected"
+msgstr "Rebutjat"
+
+msgctxt "view:supplier.compliance.record:"
+msgid "Affected Open Purchases"
+msgstr "Compres obertes afectades"
+
+msgctxt "view:supplier.compliance.record:"
+msgid "Draft Purchases"
+msgstr "Compres en esborrany"
+
+msgctxt "view:supplier.compliance.record:"
+msgid "Pending Receipt Purchases"
+msgstr "Compres pendents de rebre"
+
+msgctxt "view:supplier.compliance.record:"
+msgid "Past Purchases"
+msgstr "Compres anteriors"
+
+msgctxt "field:supplier.compliance.record,state_history:"
+msgid "State History"
+msgstr "Històric d'estats"
+
+msgctxt "field:supplier.compliance.record.state.history,record:"
+msgid "Record"
+msgstr "Registre"
+
+msgctxt "field:supplier.compliance.record.state.history,from_state:"
+msgid "From State"
+msgstr "Estat origen"
+
+msgctxt "field:supplier.compliance.record.state.history,to_state:"
+msgid "To State"
+msgstr "Estat destí"
+
+msgctxt "field:supplier.compliance.record.state.history,changed_at:"
+msgid "Changed At"
+msgstr "Data de canvi"
+
+msgctxt "field:supplier.compliance.record.state.history,changed_by:"
+msgid "Changed By"
+msgstr "Canviat per"
+
+msgctxt "model:ir.message,text:msg_record_missing_withdrawal_date"
+msgid "The withdrawn compliance record \"%(record)s\" must have a withdrawal date."
+msgstr "El registre d'homologació retirat \"%(record)s\" ha de tenir una data de baixa."
+
+msgctxt "model:ir.message,text:msg_purchase_line_blocked_by_compliance"
+msgid "The compliance record \"%(record)s\" can not be used on new purchases. Current state: %(state)s. Replacement article: %(replacement)s."
+msgstr "El registre d'homologació \"%(record)s\" no es pot usar en noves compres. Estat actual: %(state)s. Article substitut: %(replacement)s."

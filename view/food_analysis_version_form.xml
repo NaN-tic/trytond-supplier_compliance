@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<form col="4">
+    <label name="current"/>
+    <field name="current"/>
+    <label name="conform"/>
+    <field name="conform"/>
+    <label name="laboratory"/>
+    <field name="laboratory"/>
+    <label name="report_number"/>
+    <field name="report_number"/>
+    <label name="sample_date"/>
+    <field name="sample_date"/>
+    <label name="report_date"/>
+    <field name="report_date"/>
+    <label name="next_analysis_date"/>
+    <field name="next_analysis_date"/>
+    <label name="due"/>
+    <field name="due"/>
+    <label name="result"/>
+    <field name="result"/>
+    <separator string="Notes" id="notes" colspan="4"/>
+    <field name="notes" colspan="4"/>
+    <field name="attachments" colspan="4"/>
+</form>
