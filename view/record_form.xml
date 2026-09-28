@@ -21,6 +21,9 @@
         <newline/>
         <label name="external_article_name"/>
         <field name="external_article_name" colspan="3"/>
+        <newline/>
+        <label name="compliance_template"/>
+        <field name="compliance_template" colspan="3"/>
         <button name="create_template" string="Create Template"/>
 
     </group>

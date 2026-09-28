@@ -730,6 +730,14 @@ the full copyright notices and license terms. -->
             <field name="perm_create" eval="True"/>
             <field name="perm_delete" eval="True"/>
         </record>
+        <record model="ir.model.access" id="access_compliance_template_user_group">
+            <field name="model">supplier.compliance.template</field>
+            <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
         <record model="ir.model.access" id="access_compliance_template_requirement">
             <field name="model">supplier.compliance.template.requirement</field>
             <field name="perm_read" eval="False"/>
@@ -744,6 +752,14 @@ the full copyright notices and license terms. -->
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="True"/>
             <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_compliance_template_requirement_user_group">
+            <field name="model">supplier.compliance.template.requirement</field>
+            <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
         </record>
         <record model="ir.model.access" id="access_record_state_history">
             <field name="model">supplier.compliance.record.state.history</field>
@@ -775,6 +791,14 @@ the full copyright notices and license terms. -->
             <field name="perm_create" eval="True"/>
             <field name="perm_delete" eval="True"/>
         </record>
+        <record model="ir.model.access" id="access_compliance_template_certificate_user_group">
+            <field name="model">supplier.compliance.template.certificate</field>
+            <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
         <record model="ir.model.access" id="access_compliance_template_food_analysis">
             <field name="model">supplier.compliance.template.food.analysis</field>
             <field name="perm_read" eval="False"/>
@@ -789,6 +813,14 @@ the full copyright notices and license terms. -->
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="True"/>
             <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_compliance_template_food_analysis_user_group">
+            <field name="model">supplier.compliance.template.food.analysis</field>
+            <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
         </record>
         <record model="ir.model.access" id="access_compliance_template_packaging_compliance">
             <field name="model">supplier.compliance.template.packaging.compliance</field>
@@ -805,6 +837,14 @@ the full copyright notices and license terms. -->
             <field name="perm_create" eval="True"/>
             <field name="perm_delete" eval="True"/>
         </record>
+        <record model="ir.model.access" id="access_compliance_template_packaging_compliance_user_group">
+            <field name="model">supplier.compliance.template.packaging.compliance</field>
+            <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
         <record model="ir.model.access" id="access_compliance_template_packaging_migration_test">
             <field name="model">supplier.compliance.template.packaging.migration_test</field>
             <field name="perm_read" eval="False"/>
@@ -819,6 +859,14 @@ the full copyright notices and license terms. -->
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="True"/>
             <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_compliance_template_packaging_migration_test_user_group">
+            <field name="model">supplier.compliance.template.packaging.migration_test</field>
+            <field name="group" ref="group_supplier_compliance"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
         </record>
         <record model="ir.model.access" id="access_record">
             <field name="model">supplier.compliance.record</field>

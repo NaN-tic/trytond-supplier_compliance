@@ -1,6 +1,7 @@
 include README
 include INSTALL
 include tryton.cfg
+recursive-include doc *.md
 recursive-include view *.xml
 recursive-include locale *.po
 recursive-include tests *.py

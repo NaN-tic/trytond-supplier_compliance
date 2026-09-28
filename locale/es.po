@@ -1617,3 +1617,11 @@ msgstr "El registro de homologación retirado \"%(record)s\" debe tener una fech
 msgctxt "model:ir.message,text:msg_purchase_line_blocked_by_compliance"
 msgid "The compliance record \"%(record)s\" can not be used on new purchases. Current state: %(state)s. Replacement article: %(replacement)s."
 msgstr "El registro de homologación \"%(record)s\" no se puede usar en nuevas compras. Estado actual: %(state)s. Artículo sustituto: %(replacement)s."
+
+msgctxt "field:supplier.compliance.record,compliance_template:"
+msgid "Compliance Template"
+msgstr "Plantilla de homologación"
+
+msgctxt "help:supplier.compliance.record,compliance_template:"
+msgid "Optional manual template, taking priority over product category matching. Leave empty for automatic selection. Applying a template adds missing controls and preserves existing data."
+msgstr "Plantilla manual opcional que tiene prioridad sobre la categoría del producto. Déjela vacía para la selección automática. Aplicar una plantilla añade los controles que faltan y conserva los datos existentes."
