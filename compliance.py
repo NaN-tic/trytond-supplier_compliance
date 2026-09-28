@@ -640,6 +640,19 @@ class Record(DeactivableMixin, ModelSQL, ModelView):
         'Scope Type', required=True, ondelete='RESTRICT',
         help='Business scope of the record. Example: Raw Material or '
         'Packaging.')
+    compliance_template = fields.Many2One('supplier.compliance.template',
+        'Compliance Template', ondelete='RESTRICT',
+        domain=[
+            ('company', '=', Eval('company', -1)),
+            ('scope_type', '=', Eval('scope_type', -1)),
+            ],
+        states={
+            'readonly': ~Bool(Eval('company')) | ~Bool(Eval('scope_type')),
+            },
+        depends=['company', 'scope_type'],
+        help='Optional manual template, taking priority over product category '
+        'matching. Leave empty for automatic selection. Applying a template '
+        'adds missing controls and preserves existing data.')
     code = fields.Char('Code',
         help='Internal or supplier code used to identify the article. '
         'Example: FT0101 or 946.')
@@ -1254,7 +1267,8 @@ class Record(DeactivableMixin, ModelSQL, ModelView):
         '_parent_product_supplier.template', '_parent_product_supplier.code',
         '_parent_product_supplier.name', 'scope_type', '_parent_scope_type.id',
         'requirements', 'certificates', 'food_analyses',
-        'packaging_compliances', 'packaging_migration_tests')
+        'packaging_compliances', 'packaging_migration_tests',
+        methods=['_apply_compliance_template'])
     def on_change_product_supplier(self):
         if not self.product_supplier:
             return
@@ -1274,7 +1288,8 @@ class Record(DeactivableMixin, ModelSQL, ModelView):
         '_parent_product_supplier.template', '_parent_product_supplier.code',
         '_parent_product_supplier.name', 'scope_type', '_parent_scope_type.id',
         'requirements', 'certificates', 'food_analyses',
-        'packaging_compliances', 'packaging_migration_tests')
+        'packaging_compliances', 'packaging_migration_tests',
+        methods=['_apply_compliance_template'])
     def on_change_party(self):
         self._sync_product_supplier()
 
@@ -1284,7 +1299,8 @@ class Record(DeactivableMixin, ModelSQL, ModelView):
         '_parent_product_supplier.template', '_parent_product_supplier.code',
         '_parent_product_supplier.name', 'scope_type', '_parent_scope_type.id',
         'requirements', 'certificates', 'food_analyses',
-        'packaging_compliances', 'packaging_migration_tests')
+        'packaging_compliances', 'packaging_migration_tests',
+        methods=['_apply_compliance_template'])
     def on_change_product_template(self):
         if not getattr(self, 'product_template', None):
             self.product_supplier = None
@@ -1298,7 +1314,8 @@ class Record(DeactivableMixin, ModelSQL, ModelView):
         '_parent_product_supplier.template', '_parent_product_supplier.code',
         '_parent_product_supplier.name', 'scope_type', '_parent_scope_type.id',
         'requirements', 'certificates', 'food_analyses',
-        'packaging_compliances', 'packaging_migration_tests')
+        'packaging_compliances', 'packaging_migration_tests',
+        methods=['_apply_compliance_template'])
     def on_change_code(self):
         self._sync_product_supplier()
 
@@ -1308,7 +1325,8 @@ class Record(DeactivableMixin, ModelSQL, ModelView):
         '_parent_product_supplier.template', '_parent_product_supplier.code',
         '_parent_product_supplier.name', 'scope_type', '_parent_scope_type.id',
         'requirements', 'certificates', 'food_analyses',
-        'packaging_compliances', 'packaging_migration_tests')
+        'packaging_compliances', 'packaging_migration_tests',
+        methods=['_apply_compliance_template'])
     def on_change_name(self):
         self._sync_product_supplier()
 
@@ -1318,7 +1336,8 @@ class Record(DeactivableMixin, ModelSQL, ModelView):
         '_parent_product_supplier.template', '_parent_product_supplier.code',
         '_parent_product_supplier.name', 'scope_type', '_parent_scope_type.id',
         'requirements', 'certificates', 'food_analyses',
-        'packaging_compliances', 'packaging_migration_tests')
+        'packaging_compliances', 'packaging_migration_tests',
+        methods=['_apply_compliance_template'])
     def on_change_external_article_name(self):
         self._sync_product_supplier()
 
@@ -1328,7 +1347,8 @@ class Record(DeactivableMixin, ModelSQL, ModelView):
         '_parent_product_supplier.template', '_parent_product_supplier.code',
         '_parent_product_supplier.name', 'scope_type', '_parent_scope_type.id',
         'requirements', 'certificates', 'food_analyses',
-        'packaging_compliances', 'packaging_migration_tests')
+        'packaging_compliances', 'packaging_migration_tests',
+        methods=['_apply_compliance_template'])
     def on_change_scope_type(self):
         self._apply_compliance_template()
 
@@ -1338,7 +1358,8 @@ class Record(DeactivableMixin, ModelSQL, ModelView):
         '_parent_product_supplier.template', '_parent_product_supplier.code',
         '_parent_product_supplier.name', 'scope_type', '_parent_scope_type.id',
         'requirements', 'certificates', 'food_analyses',
-        'packaging_compliances', 'packaging_migration_tests')
+        'packaging_compliances', 'packaging_migration_tests',
+        methods=['_apply_compliance_template'])
     def _sync_product_supplier(self):
         ProductSupplier = Pool().get('purchase.product_supplier')
         if not self.party:
@@ -1407,12 +1428,27 @@ class Record(DeactivableMixin, ModelSQL, ModelView):
     def _normalize_match_value(value):
         return ' '.join((value or '').split()).strip().casefold()
 
+    @fields.depends(methods=['_apply_compliance_template'])
+    def on_change_compliance_template(self):
+        self._apply_compliance_template()
+
+    @fields.depends(methods=['_apply_compliance_template'])
+    def on_change_company(self):
+        self._apply_compliance_template()
+
+    @fields.depends('company', 'scope_type', 'product_template',
+        '_parent_product_template.id',
+        'compliance_template', 'requirements', 'certificates', 'food_analyses',
+        'packaging_compliances', 'packaging_migration_tests')
     def _apply_compliance_template(self):
         Template = Pool().get('supplier.compliance.template')
-        template = Template.get_matching_template(
-            getattr(self, 'company', None),
-            getattr(self, 'scope_type', None),
-            getattr(self, 'product_template', None))
+        template = self.compliance_template
+        if template and (template.company != self.company
+                or template.scope_type != self.scope_type):
+            self.compliance_template = template = None
+        if not template:
+            template = Template.get_matching_template(
+                self.company, self.scope_type, self.product_template)
         if template:
             template.apply_to_record(self)
 
