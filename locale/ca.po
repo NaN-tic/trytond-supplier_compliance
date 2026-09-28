@@ -1617,3 +1617,11 @@ msgstr "El registre d'homologació retirat \"%(record)s\" ha de tenir una data d
 msgctxt "model:ir.message,text:msg_purchase_line_blocked_by_compliance"
 msgid "The compliance record \"%(record)s\" can not be used on new purchases. Current state: %(state)s. Replacement article: %(replacement)s."
 msgstr "El registre d'homologació \"%(record)s\" no es pot usar en noves compres. Estat actual: %(state)s. Article substitut: %(replacement)s."
+
+msgctxt "field:supplier.compliance.record,compliance_template:"
+msgid "Compliance Template"
+msgstr "Plantilla d'homologació"
+
+msgctxt "help:supplier.compliance.record,compliance_template:"
+msgid "Optional manual template, taking priority over product category matching. Leave empty for automatic selection. Applying a template adds missing controls and preserves existing data."
+msgstr "Plantilla manual opcional que té prioritat sobre la categoria del producte. Deixeu-la buida per a la selecció automàtica. Aplicar una plantilla afegeix els controls que falten i conserva les dades existents."
