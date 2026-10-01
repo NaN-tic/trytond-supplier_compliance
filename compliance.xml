@@ -11,11 +11,6 @@ the full copyright notices and license terms. -->
             <field name="name">Technical Sheets Administration</field>
             <field name="parent" ref="group_supplier_compliance"/>
         </record>
-        <record model="res.user-res.group" id="user_admin_group_supplier_compliance_admin">
-            <field name="user" ref="res.user_admin"/>
-            <field name="group" ref="group_supplier_compliance_admin"/>
-        </record>
-
         <record model="ir.ui.view" id="scope_type_view_tree">
             <field name="model">supplier.compliance.scope.type</field>
             <field name="type">tree</field>
